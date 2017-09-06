@@ -1,0 +1,34 @@
+header {
+  color: #F7F5F7;
+  font-size: 40px;
+  font-weight: 300;
+  text-align: left;
+}
+
+.logo {
+  height: 50px;
+  margin: 0 20px;
+  width: 50px;
+}
+
+.navigation-wrapper {
+  align-items: baseline;
+  border-bottom: 1px solid #B7CAE9;
+  display: flex;
+  flex-direction: row;
+  margin: 20px 30px;
+  width: 100%;
+}
+
+nav a {
+  border-left: 3px solid #376183;
+  color: #F7F5F7;
+  font-size: 20px;
+  padding: 0 40px 0 25px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  border-left: 3px solid #D97850;
+  color: #E6C0A9;
+}
