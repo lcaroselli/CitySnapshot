@@ -3,6 +3,15 @@ import './App.css';
 import NavHeader from '../NavHeader/NavHeader';
 
 export default class App extends Component {
+  constructor(){
+    super();
+  }
+
+  // componentDidMount() {
+	// 	this.props.fetchData(
+	// 		`URLHERE`
+	// 	);
+  // }
 
   render() {
 
