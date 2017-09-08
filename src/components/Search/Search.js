@@ -18,7 +18,6 @@ export default class Search extends Component {
     this.setState({
       input: e.target.value,
     })
-    console.log(this.state.filteredCities)
   }
 
   filterCities(cityName) {
@@ -42,12 +41,22 @@ export default class Search extends Component {
       <div className='search-wrapper'>
         <p className='search-text'>A cost-of-living comparison tool & more</p>
         <input placeholder='Search for a City' type='search' value={ this.state.input } onChange={ e => this.handleChange(e) } />
-        <div> { this.state.filteredCities } </div>
+        <div className='filtered-cities'> { this.state.filteredCities.map(city => {
+          return (
+            <p><button>{ city }</button></p>
+          ) }) }
+        </div>
       </div>
     )
   }
 }
 
-//if search field empty, nothing displays 
+//can use down arrow to go through search list, and either click and it will redirect or hit enter on that item and it will redirect
+//if search field empty, nothing displays
+//if search can't match anything even with something in input field, tool tip that the city doesn't exist in our database
 
 //when a user selects a city from the search OR from the city list page, the CityPage component renders with corresponding City component
+
+
+//On submit, it should fetch all relevant data and create relevant city page
+// https://api.teleport.org/api/urban_areas/slug:{SELECTEDCITY}/scores/
