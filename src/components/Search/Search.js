@@ -25,3 +25,6 @@ const Search = () => {
 }
 
 export default Search;
+
+
+//when a user selects a city from the search OR from the city list page, this CityPage component renders with corresponding City component
