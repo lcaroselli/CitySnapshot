@@ -8,8 +8,14 @@ import configureStore from './ConfigureStore';
 import createHistory from '../node_modules/history/createBrowserHistory';
 import registerServiceWorker from './registerServiceWorker';
 
-const history = createHistory();
-const middleware = routerMiddleware(history);
+// There are multiple different types of Routers you can use. Each have these two things in common: The Router will contain all Routes inside; A single JSX element must be returned from it.
+
+// The most common one you will use is <BrowserRouter>.
+// BrowserRouter uses HTML5 history API (pushState, replaceState and the popstate event) to keep your UI in sync with the URL.
+
+const history = createHistory(); //creating history of browser
+const middleware = routerMiddleware(history); // Build the middleware for intercepting and dispatching navigation actions
+// Redux Thunk middleware allows you to write action creators that return a function instead of an action. The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met.
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 const store = configureStore(devTools);

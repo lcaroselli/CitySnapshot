@@ -28,6 +28,7 @@ nav a {
 }
 
 nav a:hover {
+  transition: all .3s ease-in;
   border-left: 3px solid #ACAB9E;
   color: #C06E68;
 }
