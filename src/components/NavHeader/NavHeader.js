@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import CityList from '../CityList/CityList';
 import ComparePage from '../ComparePage/ComparePage';
 import ChecklistPage from '../ChecklistPage/ChecklistPage';
+import App from '../App/App';
 
 const NavHeader = () => {
 
@@ -13,6 +14,7 @@ const NavHeader = () => {
       <header>CitySnapshot</header>
       <img src={ Logo } className='logo' alt='CitySnapshot Logo' />
         <nav>
+          <NavLink activeClassName='selected' exact to='/' component={ App }>Home</NavLink>
           <NavLink activeClassName='selected' exact to='/citylist' component={ CityList }>City List</NavLink>
           <NavLink activeClassName='selected' exact to='/compare' component={ ComparePage }>Compare Cities</NavLink>
           <NavLink activeClassName='selected' exact to='/checklist' component={ ChecklistPage }>Moving Checklist</NavLink>

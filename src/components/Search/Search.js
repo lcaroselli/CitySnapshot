@@ -51,6 +51,8 @@ export default class Search extends Component {
   }
 }
 
+//button onclick submit request AND put in the input field
+
 //can use down arrow to go through search list, and either click and it will redirect or hit enter on that item and it will redirect
 //if search field empty, nothing displays
 //if search can't match anything even with something in input field, tool tip that the city doesn't exist in our database
