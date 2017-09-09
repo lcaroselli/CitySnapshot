@@ -1,0 +1,15 @@
+h1 {
+  color: #F5F5EE;
+  font-size: 45px;
+  letter-spacing: 2px;
+  margin-top: 50px;
+}
+
+.compare-article {
+  background: #E7E1C5;
+  border: 2px solid #8AAEAB;
+  display: inline-block;
+  height: 400px;
+  margin: 20px;
+  width: 40%;
+}

@@ -1,3 +1,34 @@
+h1 {
+  color: #F5F5EE;
+  font-size: 45px;
+  letter-spacing: 2px;
+  margin-top: 50px;
+}
+
 .city-list {
   background: #252629;;
+}
+
+.city-list-container {
+  border: 2px solid #8AAEAB;
+  height: 550px;
+  margin: 20px auto;
+  overflow: scroll;
+  width: 50%;
+}
+
+.city-list-container button {
+  border: 1px solid #F5F5EE;
+  color: #F5F5EE;
+  background: none;
+  font-size: 18px;
+  margin: 10px;
+  padding: 10px;
+  width: 25%;
+}
+
+.city-list-container button:hover {
+  background: lightgrey;
+  color: #252629;
+  cursor: pointer;
 }
