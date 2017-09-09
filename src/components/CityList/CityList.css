@@ -31,4 +31,5 @@ h1 {
   background: lightgrey;
   color: #252629;
   cursor: pointer;
+  transition: all .3s ease-in;
 }

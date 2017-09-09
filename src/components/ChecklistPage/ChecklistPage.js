@@ -19,4 +19,4 @@ const ChecklistPage = () => {
 
 export default ChecklistPage;
 
-//onClick to display a new container of checklists 
+//onClick to display a new container of checklists

@@ -1,4 +1,3 @@
-//MUST TAKE IN ALL OF CITY LIST DATA (just names) AND LINK TO CORRESPONDING CITY PAGE WITH CORRECT CITY COMPONENT DISPLAYING
 import React from 'react';
 import './CityList.css';
 import cityList from '../../data-helpers/cityList';
@@ -9,7 +8,7 @@ const CityList = () => {
   return (
     <div className='city-list'>
       <h1>City List</h1>
-      
+
       <section className='city-list-container'>
       { cityKeys.map(city => {
         return (
