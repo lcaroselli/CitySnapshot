@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import App from '../components/App/App';
-import { fetchData } from '../actions';
+import { fetchScoreData, fetchDetailData, fetchImageData } from '../actions';
 
 const mapStateToProps = store => {
   return {
-    cityData: store.fetchSuccess,
+    cityScoreData: store.fetchScoreSuccess,
+    cityDetailData: store.fetchDetailSuccess,
+    cityImageData: store.fetchImageSuccess,
     isLoading: store.isLoading,
     hasErred: store.hasErred
   }
@@ -12,7 +14,9 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchData: url => dispatch(fetchData(url))
+    fetchScoreData: url => dispatch(fetchScoreData(url)),
+    fetchDetailData: url => dispatch(fetchDetailData(url)),
+    fetchImageData: url => dispatch(fetchImageData(url)),
   }
 }
 

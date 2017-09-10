@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
-import { fetchErred, fetchLoading, fetchSuccess } from './fetch-reducers';
+import { fetchErred, fetchLoading, fetchDetailSuccess, fetchImageSuccess, fetchScoreSuccess } from './fetch-reducers';
 import { routerReducer } from 'react-router-redux';
 
 const rootReducer = combineReducers({
   fetchErred,
   fetchLoading,
-  fetchSuccess,
+  fetchDetailSuccess,
+  fetchScoreSuccess,
+  fetchImageSuccess,
   routing: routerReducer
 });
 
