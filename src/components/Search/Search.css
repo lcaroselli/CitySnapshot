@@ -1,8 +1,9 @@
 .filtered-cities {
   background: #FFFFFF;
   border: 1px solid black;
-  height: 135px;
-  margin: auto;
+  margin: 0 auto;
+  height: auto;
+  max-height: 135px;
   overflow: scroll;
   padding: 10px;
   width: 50%;

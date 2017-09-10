@@ -21,10 +21,10 @@ export const fetchErred = (state = false, action) => {
 export const fetchSuccess = (state = [], action) => {
   switch(action.type) {
     case 'FETCH_SUCCESSFUL':
-      return action.data.map(city => {
+      return action.data.categories.map(city => {
         return Object.assign({}, city);
       })
-      
+
     default:
       return state;
   }

@@ -7,11 +7,14 @@ import ChecklistPage from '../ChecklistPage/ChecklistPage';
 import Search from '../Search/Search';
 import { Route } from "react-router";
 
+import CityPage from '../CityPage/CityPage';
+
 const App = () => {
   return (
     <div className="App">
       <NavHeader />
       <Route exact path="/" component={ App, Search } />
+      <CityPage />
       <Route exact path="/citylist"  component={ CityList } />
       <Route exact path="/compare" component={ ComparePage} />
       <Route exact path="/checklist" component={ ChecklistPage } />

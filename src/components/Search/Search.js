@@ -8,7 +8,8 @@ export default class Search extends Component {
     this.state={
       input: '',
       cities: Object.keys(cityList),
-      filteredCities: []
+      filteredCities: [],
+      selectedCity: null
     }
   }
 
@@ -18,6 +19,13 @@ export default class Search extends Component {
     this.setState({
       input: e.target.value,
     })
+  }
+
+  handleCityClick(e) {
+    this.setState({
+      input: e.target.innerHTML
+    })
+    this.submitCity()
   }
 
   filterCities(cityName) {
@@ -30,35 +38,38 @@ export default class Search extends Component {
     })
   }
 
-  // handleEnter(e) {
-  //   if(e.keyCode === 13) {
-  //     //submitSearch
-  //   }
-  // }
+  submitCity() {
+    console.log('enter');
+    // this.setState({
+    //   selectedCity:
+    // })
+  }
+
+  handleEnter(e) {
+    e.preventDefault();
+    if (e.keyCode === 13) {
+      this.submitCity();
+    }
+  }
 
   render() {
+    const cityDisplay = this.state.input ? "filtered-cities" : "hidden";
+
     return (
       <div className='search-wrapper'>
         <p className='search-text'>A cost-of-living comparison tool & more</p>
-        <input placeholder='Search for a City' type='search' value={ this.state.input } onChange={ e => this.handleChange(e) } />
-        <div className='filtered-cities'> { this.state.filteredCities.map(city => {
-          return (
-            <p><button>{ city }</button></p>
-          ) }) }
-        </div>
+        <form onSubmit={ e => this.handleEnter(e) }>
+          <input placeholder='Search for a City' type='search' value={ this.state.input } onChange={ e => this.handleChange(e) } />
+          <div className={ cityDisplay }> { this.state.filteredCities.map(city => {
+            return (
+              <p><button onClick={ e => this.handleCityClick(e) }>{ city }</button></p>
+            ) }) }
+          </div>
+        </form>
       </div>
     )
   }
 }
 
-//button onclick submit request AND put in the input field
-
-//can use down arrow to go through search list, and either click and it will redirect or hit enter on that item and it will redirect
-//if search field empty, nothing displays
-//if search can't match anything even with something in input field, tool tip that the city doesn't exist in our database
-
-//when a user selects a city from the search OR from the city list page, the CityPage component renders with corresponding City component
-
-
-//On submit, it should fetch all relevant data and create relevant city page
-// https://api.teleport.org/api/urban_areas/slug:{SELECTEDCITY}/scores/
+//button onclick submit request (redirect to city page w/ slug id), should fetch all relevant data and create relevant city page
+//BUG on enter when you click on one, go back to input, then hit enter -- goes up to first one on list as innerHTML value???

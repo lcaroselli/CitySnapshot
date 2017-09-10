@@ -22,21 +22,17 @@ export const fetchError = boolean => {
 export const fetchData = url => {
   return dispatch => {
 		dispatch(fetchIsLoading(true));
-
 		fetch(url)
 			.then(response => {
 				if (response.status !== 200) {
 					dispatch(fetchError(true));
-				}
-
-				dispatch(fetchIsLoading(false));
-
-				return response;
+				} else {
+            dispatch(fetchIsLoading(false));
+				    return response;
+         }
 			})
 			.then(response => response.json())
-			.then(parsedResponse =>
-				dispatch(fetchSuccessful(parsedResponse.results))
-			)
+      .then(parsedResponse => dispatch(fetchSuccessful(parsedResponse)))
 			.catch(() => dispatch(fetchError(true)));
 	}
 }

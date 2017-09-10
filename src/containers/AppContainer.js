@@ -4,6 +4,7 @@ import { fetchData } from '../actions';
 
 const mapStateToProps = store => {
   return {
+    cityData: store.fetchSuccess,
     isLoading: store.isLoading,
     hasErred: store.hasErred
   }
@@ -15,4 +16,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect (mapStateToProps, mapDispatchToProps);
+export default connect(mapStateToProps, mapDispatchToProps);
