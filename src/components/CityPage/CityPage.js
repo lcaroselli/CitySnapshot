@@ -139,21 +139,29 @@ export class CityPage extends Component {
 
    return (
       <div className='city-page'>
-        <h1 className='city-page-name'>Name of City</h1>
-        <button className='compare-city-button'>Compare City</button>
-        <nav className='city-page-nav'>
-          <button>Cost of Living</button>
-          <button>Housing Costs</button>
-          <button>City Scores</button>
-          <button>Unemployment Rate</button>
-          <button>Economy</button>
-          <button>Job Market</button>
-        </nav>
-        <section>{ cityImageData }</section>
-        <section className='score-data'>
-        <h3>City Scores</h3>
-        { mappedCityScoreData }</section>
-        <section className='detail-data'>{ mappedCityDetailData[0] }</section>
+        <header>
+          <h1 className='city-page-name'>Name of City</h1>
+          <button className='compare-city-button'>Compare City</button>
+        </header>
+
+        <section className='main'>
+          <nav className='city-page-nav'>
+            <button>City Scores</button>
+            <button>Cost of Living</button>
+            <button>Housing Costs</button>
+            <button>Unemployment Rate</button>
+            <button>Economy</button>
+            <button>Job Market</button>
+          </nav>
+
+          <section className='all-data'>
+            <section>{ cityImageData }</section>
+            <section className='score-data'>
+            <h3>City Scores</h3>
+            { mappedCityScoreData }</section>
+            <section className='detail-data'>{ mappedCityDetailData[0] }</section>
+          </section>
+        </section>
       </div>
     )
   }

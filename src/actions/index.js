@@ -47,7 +47,6 @@ export const fetchScoreData = url => {
 			})
 			.then(response => response.json())
       .then(parsedResponse => dispatch(fetchScoreSuccessful(parsedResponse)))
-      // .then(response => console.log(response))
 			.catch(() => dispatch(fetchError(true)));
 	}
 }
@@ -66,7 +65,6 @@ export const fetchDetailData = url => {
 			})
 			.then(response => response.json())
       .then(parsedResponse => dispatch(fetchDetailSuccessful(parsedResponse)))
-      // .then(response => console.log(response))
 			.catch(() => dispatch(fetchError(true)));
 	}
 }
@@ -85,7 +83,6 @@ export const fetchImageData = url => {
 			})
 			.then(response => response.json())
       .then(parsedResponse => dispatch(fetchImageSuccessful(parsedResponse)))
-      // .then(response => console.log(response))
 			.catch(() => dispatch(fetchError(true)));
 	}
 }

@@ -1,13 +1,17 @@
+.all-data {
+  display: flex;
+  flex-direction: column;
+}
+
 .city-page {
   background: #D9D9D9;
   color: #252629;
-  height: 100vh;
 }
 
 .city-page-name {
   background: white;
   color: #252629;
-  margin: 50px auto;
+  margin: 50px auto 50px 20px;
   width: 500px;
 }
 
@@ -19,9 +23,8 @@
   background: white;
   display: flex;
   flex-direction: column;
-  float: left;
-  margin: 20px;
-  width: 300px;
+  justify-content: space-between;
+  margin: 0px 20px;
 }
 
 .compare-city-button {
@@ -30,7 +33,9 @@
   border-radius: 8%;
   color: #252629;
   font-size: 15px;
-  padding: 20px;
+  height: 50px;
+  width: 150px;
+  margin: auto;
 }
 
 .compare-city-button:hover {
@@ -68,4 +73,13 @@
 
 .city-score {
   font-size: 15px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+}
+
+.main {
+  display: flex;
 }
