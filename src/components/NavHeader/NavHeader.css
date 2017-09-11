@@ -19,7 +19,7 @@ header {
   width: 100%;
 }
 
-nav a {
+.main-nav a {
   border-left: 3px solid #393A41;
   color: #F5F5EE;
   font-size: 20px;
@@ -27,7 +27,7 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover {
+.main-nav a:hover {
   transition: all .3s ease-in;
   border-left: 3px solid #ACAB9E;
   color: #C06E68;

@@ -13,7 +13,7 @@ const NavHeader = () => {
     <div className='navigation-wrapper'>
       <header>CitySnapshot</header>
       <img src={ Logo } className='logo' alt='CitySnapshot Logo' />
-        <nav>
+        <nav className='main-nav'>
           <NavLink activeClassName='selected' exact to='/' component={ App }>Home</NavLink>
           <NavLink activeClassName='selected' exact to='/citylist' component={ CityList }>City List</NavLink>
           <NavLink activeClassName='selected' exact to='/compare' component={ ComparePage }>Compare Cities</NavLink>

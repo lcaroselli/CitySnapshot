@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AppContainer from '../../containers/AppContainer';
+import { HashLink as Link } from 'react-router-hash-link';
 import './CityPage.css';
 
 export class CityPage extends Component {
@@ -102,30 +103,30 @@ export class CityPage extends Component {
 
     const mappedCityDetailData = this.handleCityDetailDisplay().map(city => (
       <div className='city-details'>
-        <section>
+        <section className='cost-of-living' id='cost-of-living-2'>
           <h3>{ city.costOfLiving.name }</h3>
           <p>{ city.costOfLiving.type }</p>
           <p>{ city.costOfLiving.typeData }</p>
         </section>
 
-        <section>
+        <section className='housing' id='housing-2'>
           <h3>{ city.housing.name }</h3>
           <p>{ city.housing.type }</p>
           <p>{ city.housing.typeData }</p>
         </section>
 
-        <section>
+        <section className='unemployment' id='unemployment-2'>
           <h3>Unemployment Rate</h3>
           <p>{ city.unemployment.typeData }</p>
         </section>
 
-        <section>
+        <section className='economy' id='economy-2'>
           <h3>{ city.economy.name }</h3>
           <p>{ city.economy.type }</p>
           <p>{ city.economy.typeData }</p>
         </section>
 
-        <section>
+        <section className='job-market' id='job-market-2'>
           <h3>{ city.jobMarket .name}</h3>
           <p>{ city.jobMarket.type }</p>
           <p>{ city.jobMarket.typeData }</p>
@@ -146,20 +147,20 @@ export class CityPage extends Component {
 
         <section className='main'>
           <nav className='city-page-nav'>
-            <button>City Scores</button>
-            <button>Cost of Living</button>
-            <button>Housing Costs</button>
-            <button>Unemployment Rate</button>
-            <button>Economy</button>
-            <button>Job Market</button>
+            <Link to='#score-data-2'>City Scores</Link>
+            <Link to='#cost-of-living-2'>Cost of Living</Link>
+            <Link to='#housing-2'>Housing Costs</Link>
+            <Link to='#unemployment-2'>Unemployment Rate</Link>
+            <Link to='#economy-2'>Economy</Link>
+            <Link to='#job-market-2'>Job Market</Link>
           </nav>
 
           <section className='all-data'>
             <section>{ cityImageData }</section>
-            <section className='score-data'>
+            <section id='score-data-2' className='score-data'>
             <h3>City Scores</h3>
             { mappedCityScoreData }</section>
-            <section className='detail-data'>{ mappedCityDetailData[0] }</section>
+            <section id='detail-data-2' className='detail-data'>{ mappedCityDetailData[0] }</section>
           </section>
         </section>
       </div>

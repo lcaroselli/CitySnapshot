@@ -46,7 +46,7 @@
   transition: all .3s ease-in;
 }
 
-.city-page-nav button {
+.city-page-nav a {
   background: none;
   border: none;
   border-left: 3px solid white;
@@ -57,7 +57,7 @@
   text-decoration: none;
 }
 
-.city-page-nav button:hover {
+.city-page-nav a:hover {
   background: none;
   border-left: 3px solid #007EA7;
   border-right: 3px solid #007EA7;
@@ -73,6 +73,8 @@
 
 .city-score {
   font-size: 15px;
+  margin: 15px 20px;
+  text-align: left;
 }
 
 header {
