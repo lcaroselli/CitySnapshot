@@ -80,15 +80,6 @@ export class CityPage extends Component {
     })
   }
 
-  // handleCityImageDisplay() {
-  //   const { cityImageData } = this.props;
-
-  //   return cityImageData.map(city => {
-  //     return {
-  //      city.image.web ((returns a href src, plug into a variable and then use that variable as image))
-  //     }
-  //   })
-  // }
 
   render() {
     const { hasErred, isLoading } = this.props;
@@ -101,42 +92,41 @@ export class CityPage extends Component {
       return <p>Error...</p>
     }
 
+    const cityImageData = this.props.cityImageData.map(city => (
+        <img className='city-image' src={city.image.web}/> ));
+
     const mappedCityScoreData = this.handleCityScoreDisplay().map(city => (
       <section className='city-score-wrapper'>
-        <p className='city-score-name'>{ city.name }</p>
-        <p className='city-score'>{ city.score }</p>
-      </section>
-    ));
+        <p className='city-score'>{ city.name }: { city.score }</p>
+      </section> ));
 
     const mappedCityDetailData = this.handleCityDetailDisplay().map(city => (
-      // console.log(city)
       <div className='city-details'>
         <section>
-          <p>{ city.costOfLiving.name }</p>
+          <h3>{ city.costOfLiving.name }</h3>
           <p>{ city.costOfLiving.type }</p>
           <p>{ city.costOfLiving.typeData }</p>
         </section>
 
         <section>
-          <p>{ city.housing.name }</p>
+          <h3>{ city.housing.name }</h3>
           <p>{ city.housing.type }</p>
           <p>{ city.housing.typeData }</p>
         </section>
 
         <section>
-          <p>Unemployment</p>
-          <p>{ city.unemployment.type }</p>
+          <h3>Unemployment Rate</h3>
           <p>{ city.unemployment.typeData }</p>
         </section>
 
         <section>
-          <p>{ city.economy.name }</p>
+          <h3>{ city.economy.name }</h3>
           <p>{ city.economy.type }</p>
           <p>{ city.economy.typeData }</p>
         </section>
 
         <section>
-          <p>{ city.jobMarket .name}</p>
+          <h3>{ city.jobMarket .name}</h3>
           <p>{ city.jobMarket.type }</p>
           <p>{ city.jobMarket.typeData }</p>
           <p>{ city.jobMarket.type2 }</p>
@@ -144,33 +134,30 @@ export class CityPage extends Component {
           <p>{ city.jobMarket.type3 }</p>
           <p>{ city.jobMarket.typeData3 }</p>
         </section>
-      </div>
-    ));
+      </div> ));
 
-    // const mappedCityImageData = this.handleCityImageDisplay().map(city => (
-    //   <p>{ city.name }{city.score}</p> ));
 
    return (
-      <div>
-        <h1>Name of City</h1>
-        <img src='' />
-        <button>Compare City</button>
-        <nav>
-          <button>Cost of Living & Purchasing Power</button>
+      <div className='city-page'>
+        <h1 className='city-page-name'>Name of City</h1>
+        <button className='compare-city-button'>Compare City</button>
+        <nav className='city-page-nav'>
+          <button>Cost of Living</button>
           <button>Housing Costs</button>
           <button>City Scores</button>
           <button>Unemployment Rate</button>
           <button>Economy</button>
           <button>Job Market</button>
         </nav>
-        <section>{ mappedCityScoreData }</section>
-        <section>{ mappedCityDetailData }</section>
+        <section>{ cityImageData }</section>
+        <section className='score-data'>
+        <h3>City Scores</h3>
+        { mappedCityScoreData }</section>
+        <section className='detail-data'>{ mappedCityDetailData[0] }</section>
       </div>
     )
   }
 }
-
-// <section>{ mappedCityImageData }</section>
 
 export default AppContainer(CityPage);
 
@@ -183,4 +170,4 @@ export default AppContainer(CityPage);
 //when a user selects a city from the search OR from the city list page, this CityPage component renders with corresponding City component
 
 
-//button onclicks to display that specific data wrapper, else, they are hidden
+//button onclicks to jump to that specific part of the page, as you scroll down, the aside highlights which section you are at...

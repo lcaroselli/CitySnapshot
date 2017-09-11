@@ -17,10 +17,12 @@ const NavHeader = () => {
           <NavLink activeClassName='selected' exact to='/' component={ App }>Home</NavLink>
           <NavLink activeClassName='selected' exact to='/citylist' component={ CityList }>City List</NavLink>
           <NavLink activeClassName='selected' exact to='/compare' component={ ComparePage }>Compare Cities</NavLink>
-          <NavLink activeClassName='selected' exact to='/checklist' component={ ChecklistPage }>Moving Checklist</NavLink>
         </nav>
     </div>
   )
 }
 
 export default NavHeader;
+
+
+// <NavLink activeClassName='selected' exact to='/checklist' component={ ChecklistPage }>Moving Checklist</NavLink>
