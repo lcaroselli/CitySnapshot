@@ -88,3 +88,7 @@ header {
 .main {
   display: flex;
 }
+
+.charts {
+  width: 30%;
+}

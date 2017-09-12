@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AppContainer from '../../containers/AppContainer';
 import { HashLink as Link } from 'react-router-hash-link';
 import './CityPage.css';
+import { VictoryBar, VictoryChart } from 'victory';
 
 export class CityPage extends Component {
   componentDidMount() {
@@ -158,8 +159,14 @@ export class CityPage extends Component {
           <section className='all-data'>
             <section>{ cityImageData }</section>
             <section id='score-data' className='score-data'>
-            <h3>City Scores</h3>
-            { mappedCityScoreData }</section>
+              <h3>City Scores</h3>
+              { mappedCityScoreData }
+              <section className='charts'>
+                <VictoryChart>
+                  <VictoryBar />
+                </VictoryChart>
+              </section>
+            </section>
             <section id='detail-data' className='detail-data'>{ mappedCityDetailData[0] }</section>
           </section>
         </section>
@@ -171,7 +178,7 @@ export class CityPage extends Component {
 export default AppContainer(CityPage);
 
 
-//When a user selects a city from the search OR from the city list page, this CityPage component renders with corresponding City component
+//When a user selects a city from the city list page, this CityPage component renders
 
 //As you scroll down, the aside highlights which section you are at...
 
