@@ -4,10 +4,8 @@ import NavHeader from '../NavHeader/NavHeader';
 import CityList from '../CityList/CityList';
 import ComparePage from '../ComparePage/ComparePage';
 import ChecklistPage from '../ChecklistPage/ChecklistPage';
-import Search from '../Search/Search';
+import Search from '../Search/Search'
 import { Route } from "react-router";
-
-import CityPage from '../CityPage/CityPage';
 
 const App = () => {
   return (

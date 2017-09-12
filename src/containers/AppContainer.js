@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import App from '../components/App/App';
+import CityCard from '../components/CityCard/CityCard';
+import CityPage from '../components/CityPage/CityPage';
 import { fetchScoreData, fetchDetailData, fetchImageData } from '../actions';
 
 const mapStateToProps = store => {

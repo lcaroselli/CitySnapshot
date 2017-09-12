@@ -1,6 +1,6 @@
 import React from 'react';
 
-const handleCityScoreDisplay = (data) => {
+export const handleCityScoreDisplay = (data) => {
   return data.map(city => {
     return {
       name: city.name,
@@ -9,7 +9,7 @@ const handleCityScoreDisplay = (data) => {
   })
 }
 
-const handleCityDetailDisplay = (cityDetailData) => {
+export const handleCityDetailDisplay = (cityDetailData) => {
   return cityDetailData.map(city => {
     return {
       costOfLiving: {
@@ -47,52 +47,4 @@ const handleCityDetailDisplay = (cityDetailData) => {
       }
     }
   })
-}
-
-export const cityImageData = () => { this.props.cityImageData.map(city => (
-    <img className='city-image' src={ city.image.web }/> ))
-  }
-
-export const mappedCityScoreData = (data) => { handleCityScoreDisplay(data).map(city => (
-  <section className='city-score-wrapper'>
-    <p className='city-score'>{ city.name }: { city.score }</p>
-  </section> ))
-}
-
-export const mappedCityDetailData = (data) => {
-  handleCityDetailDisplay(data).map ( city => (
-  <div className='city-details'>
-    <section className='cost-of-living' id='cost-of-living'>
-      <h3>{ city.costOfLiving.name }</h3>
-      <p>{ city.costOfLiving.type }</p>
-      <p>{ city.costOfLiving.typeData }</p>
-    </section>
-
-    <section className='housing' id='housing'>
-      <h3>{ city.housing.name }</h3>
-      <p>{ city.housing.type }</p>
-      <p>{ city.housing.typeData }</p>
-    </section>
-
-    <section className='unemployment' id='unemployment'>
-      <h3>Unemployment Rate</h3>
-      <p>{ city.unemployment.typeData }</p>
-    </section>
-
-    <section className='economy' id='economy'>
-      <h3>{ city.economy.name }</h3>
-      <p>{ city.economy.type }</p>
-      <p>{ city.economy.typeData }</p>
-    </section>
-
-    <section className='job-market' id='job-market'>
-      <h3>{ city.jobMarket .name}</h3>
-      <p>{ city.jobMarket.type }</p>
-      <p>{ city.jobMarket.typeData }</p>
-      <p>{ city.jobMarket.type2 }</p>
-      <p>{ city.jobMarket.typeData2 }</p>
-      <p>{ city.jobMarket.type3 }</p>
-      <p>{ city.jobMarket.typeData3 }</p>
-    </section>
-  </div> ))
 }

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import CityCard from '../CityCard/CityCard';
 import AppContainer from '../../containers/AppContainer';
 import { HashLink as Link } from 'react-router-hash-link';
 import './CityPage.css';
-import { VictoryBar, VictoryChart } from 'victory';
-import { cityImageData, mappedCityScoreData, mappedCityDetailData } from '../../data-helpers/dataCleaner';
 
 export class CityPage extends Component {
   componentDidMount() {
@@ -30,9 +29,7 @@ export class CityPage extends Component {
   	);
   }
 
-
   render() {
-    console.log(this.props.cityScoreData, this.props.cityDetailData)
 
     const { hasErred, isLoading } = this.props;
 
@@ -62,20 +59,7 @@ export class CityPage extends Component {
           </nav>
 
           <section className='all-data'>
-            <section>{ cityImageData }</section>
-            <section id='score-data' className='score-data'>
-              <h3>City Scores</h3>
-              {
-               mappedCityScoreData(this.props.cityScoreData) }
-              <section className='charts'>
-                <VictoryChart>
-                  <VictoryBar />
-                </VictoryChart>
-              </section>
-            </section>
-            <section id='detail-data' className='detail-data'>
-             { mappedCityDetailData(this.props.cityDetailData) }
-          </section>
+            <CityCard />
           </section>
         </section>
       </div>
