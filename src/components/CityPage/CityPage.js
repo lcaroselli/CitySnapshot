@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import CityCard from '../CityCard/CityCard';
 import AppContainer from '../../containers/AppContainer';
 import { HashLink as Link } from 'react-router-hash-link';
 import './CityPage.css';
-import { VictoryBar, VictoryChart } from 'victory';
 
 export class CityPage extends Component {
   componentDidMount() {
@@ -29,61 +29,8 @@ export class CityPage extends Component {
   	);
   }
 
-  handleCityScoreDisplay() {
-		const { cityScoreData } = this.props;
-
-    return cityScoreData.map(city => {
-      return {
-        name: city.name,
-        score: city.score_out_of_10
-      }
-    })
-  }
-
-  handleCityDetailDisplay() {
-    const { cityDetailData } = this.props;
-
-    return cityDetailData.map(city => {
-      return {
-        costOfLiving: {
-          name: cityDetailData[3].label,
-          type: cityDetailData[3].data.map(type => { return type.label }),
-          typeData: cityDetailData[3].data.map(type => { return type.currency_dollar_value })
-        },
-
-        housing: {
-          name: cityDetailData[8].label,
-          type: cityDetailData[8].data.map(type => { return type.label }),
-          typeData: cityDetailData[8].data.map(type => { return type.currency_dollar_value })
-        },
-
-        unemployment: {
-          name: cityDetailData[9].label,
-          type: cityDetailData[9].data[3].label,
-          typeData: cityDetailData[9].data[3].percent_value
-        },
-
-        economy: {
-          name: cityDetailData[5].label,
-          type: cityDetailData[5].data[2].label,
-          typeData: cityDetailData[5].data[2].percent_value
-        },
-
-        jobMarket:{
-          name: cityDetailData[10].label,
-          type: cityDetailData[10].data[3].label,
-          typeData: cityDetailData[10].data[3].int_value,
-          type2: cityDetailData[10].data[4].label,
-          typeData2: cityDetailData[10].data[4].float_value,
-          type3: cityDetailData[10].data[5].label,
-          typeData3: cityDetailData[10].data[5].float_value
-        }
-      }
-    })
-  }
-
-
   render() {
+
     const { hasErred, isLoading } = this.props;
 
     if(isLoading) {
@@ -94,52 +41,7 @@ export class CityPage extends Component {
       return <p>Error...</p>
     }
 
-    const cityImageData = this.props.cityImageData.map(city => (
-        <img className='city-image' src={city.image.web}/> ));
-
-    const mappedCityScoreData = this.handleCityScoreDisplay().map(city => (
-      <section className='city-score-wrapper'>
-        <p className='city-score'>{ city.name }: { city.score }</p>
-      </section> ));
-
-    const mappedCityDetailData = this.handleCityDetailDisplay().map(city => (
-      <div className='city-details'>
-        <section className='cost-of-living' id='cost-of-living'>
-          <h3>{ city.costOfLiving.name }</h3>
-          <p>{ city.costOfLiving.type }</p>
-          <p>{ city.costOfLiving.typeData }</p>
-        </section>
-
-        <section className='housing' id='housing'>
-          <h3>{ city.housing.name }</h3>
-          <p>{ city.housing.type }</p>
-          <p>{ city.housing.typeData }</p>
-        </section>
-
-        <section className='unemployment' id='unemployment'>
-          <h3>Unemployment Rate</h3>
-          <p>{ city.unemployment.typeData }</p>
-        </section>
-
-        <section className='economy' id='economy'>
-          <h3>{ city.economy.name }</h3>
-          <p>{ city.economy.type }</p>
-          <p>{ city.economy.typeData }</p>
-        </section>
-
-        <section className='job-market' id='job-market'>
-          <h3>{ city.jobMarket .name}</h3>
-          <p>{ city.jobMarket.type }</p>
-          <p>{ city.jobMarket.typeData }</p>
-          <p>{ city.jobMarket.type2 }</p>
-          <p>{ city.jobMarket.typeData2 }</p>
-          <p>{ city.jobMarket.type3 }</p>
-          <p>{ city.jobMarket.typeData3 }</p>
-        </section>
-      </div> ));
-
-
-   return (
+      return (
       <div className='city-page'>
         <header>
           <h1 className='city-page-name'>{ this.props.name }</h1>
@@ -157,23 +59,14 @@ export class CityPage extends Component {
           </nav>
 
           <section className='all-data'>
-            <section>{ cityImageData }</section>
-            <section id='score-data' className='score-data'>
-              <h3>City Scores</h3>
-              { mappedCityScoreData }
-              <section className='charts'>
-                <VictoryChart>
-                  <VictoryBar />
-                </VictoryChart>
-              </section>
-            </section>
-            <section id='detail-data' className='detail-data'>{ mappedCityDetailData[0] }</section>
+            <CityCard />
           </section>
         </section>
       </div>
     )
   }
 }
+
 
 export default AppContainer(CityPage);
 
