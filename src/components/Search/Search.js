@@ -23,16 +23,13 @@ export default class Search extends Component {
   }
 
   handleCityClick(e) {
-    const cityStuff = this.state.cities.map(el => { return cityList[el] })
+    const filteredKey = this.state.cities.filter(el => el === e.target.innerHTML)
 
-    // console.log(cityStuff)
-
-    // const matchingCity = cityStuff.filter(el => el === )
-    // filter - if the input matches the cityStuff slug
+    const filteredCityList = cityList[filteredKey]
 
     this.setState({
       input: e.target.innerHTML,
-      targetCity: 'san-diego'
+      targetCity: filteredCityList
     })
   }
 
@@ -75,7 +72,6 @@ export default class Search extends Component {
   }
 }
 
-//submit SLUG of city
 //give cityPage a path
 //should be able to navigate down search with up and down keys
 //Move SEARCH to top of NAV on cityPage
