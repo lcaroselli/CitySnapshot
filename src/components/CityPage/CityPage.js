@@ -12,19 +12,19 @@ export class CityPage extends Component {
 
   cityScores() {
   	this.props.fetchScoreData(
-  		`https://api.teleport.org/api/urban_areas/slug:san-diego/scores/`
+  		`https://api.teleport.org/api/urban_areas/slug:${ this.props.city }/scores/`
   	);
   }
 
   cityDetails() {
     this.props.fetchDetailData(
-  		`https://api.teleport.org/api/urban_areas/slug:san-diego/details/`
+  		`https://api.teleport.org/api/urban_areas/slug:${ this.props.city }/details/`
   	);
   }
 
   cityImage() {
     this.props.fetchImageData(
-  		`https://api.teleport.org/api/urban_areas/slug:san-diego/images/`
+  		`https://api.teleport.org/api/urban_areas/slug:${ this.props.city }/images/`
   	);
   }
 
@@ -103,30 +103,30 @@ export class CityPage extends Component {
 
     const mappedCityDetailData = this.handleCityDetailDisplay().map(city => (
       <div className='city-details'>
-        <section className='cost-of-living' id='cost-of-living-2'>
+        <section className='cost-of-living' id='cost-of-living'>
           <h3>{ city.costOfLiving.name }</h3>
           <p>{ city.costOfLiving.type }</p>
           <p>{ city.costOfLiving.typeData }</p>
         </section>
 
-        <section className='housing' id='housing-2'>
+        <section className='housing' id='housing'>
           <h3>{ city.housing.name }</h3>
           <p>{ city.housing.type }</p>
           <p>{ city.housing.typeData }</p>
         </section>
 
-        <section className='unemployment' id='unemployment-2'>
+        <section className='unemployment' id='unemployment'>
           <h3>Unemployment Rate</h3>
           <p>{ city.unemployment.typeData }</p>
         </section>
 
-        <section className='economy' id='economy-2'>
+        <section className='economy' id='economy'>
           <h3>{ city.economy.name }</h3>
           <p>{ city.economy.type }</p>
           <p>{ city.economy.typeData }</p>
         </section>
 
-        <section className='job-market' id='job-market-2'>
+        <section className='job-market' id='job-market'>
           <h3>{ city.jobMarket .name}</h3>
           <p>{ city.jobMarket.type }</p>
           <p>{ city.jobMarket.typeData }</p>
@@ -147,20 +147,20 @@ export class CityPage extends Component {
 
         <section className='main'>
           <nav className='city-page-nav'>
-            <Link to='#score-data-2'>City Scores</Link>
-            <Link to='#cost-of-living-2'>Cost of Living</Link>
-            <Link to='#housing-2'>Housing Costs</Link>
-            <Link to='#unemployment-2'>Unemployment Rate</Link>
-            <Link to='#economy-2'>Economy</Link>
-            <Link to='#job-market-2'>Job Market</Link>
+            <Link to='#score-data'>City Scores</Link>
+            <Link to='#cost-of-living'>Cost of Living</Link>
+            <Link to='#housing'>Housing Costs</Link>
+            <Link to='#unemployment'>Unemployment Rate</Link>
+            <Link to='#economy'>Economy</Link>
+            <Link to='#job-market'>Job Market</Link>
           </nav>
 
           <section className='all-data'>
             <section>{ cityImageData }</section>
-            <section id='score-data-2' className='score-data'>
+            <section id='score-data' className='score-data'>
             <h3>City Scores</h3>
             { mappedCityScoreData }</section>
-            <section id='detail-data-2' className='detail-data'>{ mappedCityDetailData[0] }</section>
+            <section id='detail-data' className='detail-data'>{ mappedCityDetailData[0] }</section>
           </section>
         </section>
       </div>
@@ -171,12 +171,7 @@ export class CityPage extends Component {
 export default AppContainer(CityPage);
 
 
-//Things to figure out:
-  //How to grab the submitted search query and plug that in as the slug city on this page with the fecth actions
-  //Should I store that city in the store somewhere and then just grab that data from the store?
+//When a user selects a city from the search OR from the city list page, this CityPage component renders with corresponding City component
 
 
-//when a user selects a city from the search OR from the city list page, this CityPage component renders with corresponding City component
-
-
-//button onclicks to jump to that specific part of the page, as you scroll down, the aside highlights which section you are at...
+//As you scroll down, the aside highlights which section you are at...

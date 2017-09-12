@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Search.css';
 import cityList from '../../data-helpers/cityList';
+import CityPage from '../CityPage/CityPage';
 
 export default class Search extends Component {
   constructor() {
@@ -9,7 +10,7 @@ export default class Search extends Component {
       input: '',
       cities: Object.keys(cityList),
       filteredCities: [],
-      selectedCity: null
+      targetCity: null
     }
   }
 
@@ -17,20 +18,25 @@ export default class Search extends Component {
     this.filterCities(e.target.value);
 
     this.setState({
-      input: e.target.value,
+      input: e.target.value
     })
   }
 
   handleCityClick(e) {
+    const cityStuff = this.state.cities.map(el => { return cityList[el] })
+
+    // console.log(cityStuff)
+    // filter - if the input innerHTML matches the cityList el, then return the cityList[el]
+
     this.setState({
-      input: e.target.innerHTML
+      input: e.target.innerHTML,
+      targetCity: 'san-diego'
     })
-    this.submitCity()
   }
 
   filterCities(cityName) {
     const filterSearchedCities = this.state.cities.filter(city => {
-      return city.startsWith(cityName);
+      return city.toLowerCase().startsWith(cityName.toLowerCase());
     })
 
     this.setState({
@@ -38,18 +44,8 @@ export default class Search extends Component {
     })
   }
 
-  submitCity() {
-    console.log('enter');
-    // this.setState({
-    //   selectedCity:
-    // })
-  }
-
   handleEnter(e) {
     e.preventDefault();
-    if (e.keyCode === 13) {
-      this.submitCity();
-    }
   }
 
   render() {
@@ -66,10 +62,12 @@ export default class Search extends Component {
             ) }) }
           </div>
         </form>
+        { this.state.targetCity && <CityPage city={ this.state.targetCity } /> }
       </div>
     )
   }
 }
 
-//button onclick submit request (redirect to city page w/ slug id), should fetch all relevant data and create relevant city page
+//submit SLUG of city
 //BUG on enter when you click on one, go back to input, then hit enter -- goes up to first one on list as innerHTML value???
+//Hide div when a city is searched, but keep input value in the box still
