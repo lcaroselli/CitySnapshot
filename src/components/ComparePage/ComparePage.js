@@ -5,8 +5,20 @@ const ComparePage = () => {
   return (
     <div className='compare-wrapper'>
       <h1>Compare Cities</h1>
-      <article className='compare-article'></article>
-      <article className='compare-article'></article>
+      <section className='compare-cities'>
+        <article className='compare-article'>
+          <h1>City 1</h1>
+          <p>City 1 Scores</p>
+        </article>
+
+        <article className='compare-article'>
+          <h1>City 2</h1>
+          <p>City 2 Scores</p>
+        </article>
+
+      </section>
+      
+      <article className='results'>Chart/Visualization of results when compared to each other - who comes out on top in different categories</article>
     </div>
   )
 }

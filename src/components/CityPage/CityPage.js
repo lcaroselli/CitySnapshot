@@ -141,7 +141,7 @@ export class CityPage extends Component {
    return (
       <div className='city-page'>
         <header>
-          <h1 className='city-page-name'>Name of City</h1>
+          <h1 className='city-page-name'>{ this.props.name }</h1>
           <button className='compare-city-button'>Compare City</button>
         </header>
 
@@ -173,5 +173,8 @@ export default AppContainer(CityPage);
 
 //When a user selects a city from the search OR from the city list page, this CityPage component renders with corresponding City component
 
-
 //As you scroll down, the aside highlights which section you are at...
+
+//Add a search here - maybe can re-use component??
+
+//Compare button should redirect to compare page with the first city already populated. Second city you choose from a list.

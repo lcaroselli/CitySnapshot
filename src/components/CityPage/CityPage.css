@@ -12,7 +12,8 @@
   background: white;
   color: #252629;
   margin: 50px auto 50px 20px;
-  width: 500px;
+  padding: 10px;
+  width: auto;
 }
 
 .city-image {
@@ -46,11 +47,12 @@
   transition: all .3s ease-in;
 }
 
-.city-page-nav a {
+.city-page-nav a, .city-page-nav a:visited {
   background: none;
   border: none;
   border-left: 3px solid white;
   border-right: 3px solid white;
+  color: #252629;
   font-size: 15px;
   margin: 30px 0;
   padding: 0 40px 15px 25px;
@@ -80,6 +82,7 @@
 header {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
 }
 
 .main {

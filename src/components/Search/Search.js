@@ -26,7 +26,9 @@ export default class Search extends Component {
     const cityStuff = this.state.cities.map(el => { return cityList[el] })
 
     // console.log(cityStuff)
-    // filter - if the input innerHTML matches the cityList el, then return the cityList[el]
+
+    // const matchingCity = cityStuff.filter(el => el === )
+    // filter - if the input matches the cityStuff slug
 
     this.setState({
       input: e.target.innerHTML,
@@ -52,22 +54,28 @@ export default class Search extends Component {
     const cityDisplay = this.state.input ? "filtered-cities" : "hidden";
 
     return (
-      <div className='search-wrapper'>
-        <p className='search-text'>A cost-of-living comparison tool & more</p>
-        <form onSubmit={ e => this.handleEnter(e) }>
-          <input placeholder='Search for a City' type='search' value={ this.state.input } onChange={ e => this.handleChange(e) } />
-          <div className={ cityDisplay }> { this.state.filteredCities.map(city => {
-            return (
-              <p><button onClick={ e => this.handleCityClick(e) }>{ city }</button></p>
-            ) }) }
-          </div>
-        </form>
-        { this.state.targetCity && <CityPage city={ this.state.targetCity } /> }
-      </div>
+      <div>
+      { !this.state.targetCity &&
+        <div className='search-wrapper'>
+          <p className='search-text'>A cost-of-living comparison tool & more</p>
+          <form onSubmit={ e => this.handleEnter(e) }>
+            <input placeholder='Search for a City' type='search' value={ this.state.input } onChange={ e => this.handleChange(e) } />
+            <div className={ cityDisplay }> { this.state.filteredCities.map(city => {
+              return (
+                <p><button onClick={ e => this.handleCityClick(e) }>{ city }</button></p>
+              ) }) }
+            </div>
+          </form>
+        </div>
+      }
+
+      { this.state.targetCity && <CityPage name={ this.state.input } city={ this.state.targetCity } /> }
+    </div>
     )
   }
 }
 
 //submit SLUG of city
-//BUG on enter when you click on one, go back to input, then hit enter -- goes up to first one on list as innerHTML value???
-//Hide div when a city is searched, but keep input value in the box still
+//give cityPage a path
+//should be able to navigate down search with up and down keys
+//Move SEARCH to top of NAV on cityPage
