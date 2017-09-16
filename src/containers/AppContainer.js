@@ -1,8 +1,5 @@
 import { connect } from 'react-redux';
-import App from '../components/App/App';
-import CityCard from '../components/CityCard/CityCard';
-import CityPage from '../components/CityPage/CityPage';
-import { fetchScoreData, fetchDetailData, fetchImageData } from '../actions';
+import { fetchScoreData, fetchDetailData, fetchImageData, submitCity } from '../actions';
 
 const mapStateToProps = store => {
   return {
@@ -10,7 +7,8 @@ const mapStateToProps = store => {
     cityDetailData: store.fetchDetailSuccess,
     cityImageData: store.fetchImageSuccess,
     isLoading: store.isLoading,
-    hasErred: store.hasErred
+    hasErred: store.hasErred,
+    submittedCity: store.submitCitySuccess
   }
 }
 
@@ -19,6 +17,7 @@ const mapDispatchToProps = dispatch => {
     fetchScoreData: url => dispatch(fetchScoreData(url)),
     fetchDetailData: url => dispatch(fetchDetailData(url)),
     fetchImageData: url => dispatch(fetchImageData(url)),
+    submitCity: (city, name) => dispatch(submitCity(city, name))
   }
 }
 

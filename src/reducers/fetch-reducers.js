@@ -18,18 +18,6 @@ export const fetchErred = (state = false, action) => {
   }
 }
 
-// export const fetchSuccess = (state = [], action) => {
-//   switch(action.type) {
-//     case 'FETCH_SUCCESSFUL':
-//       return action.data.categories.map(city => {
-//         return Object.assign({}, city);
-//       })
-//
-//     default:
-//       return state;
-//   }
-// }
-
 export const fetchImageSuccess = (state = [], action) => {
   switch(action.type) {
     case 'FETCH_IMAGE_SUCCESSFUL':

@@ -5,7 +5,7 @@ import AppContainer from '../../containers/AppContainer';
 import './CityCard.css';
 
 export class CityCard extends Component {
-
+  
   cityImageData = () => {
     return this.props.cityImageData.map(city => ( <img className='city-image' src={ city.image.web }/> ))
   }
@@ -13,7 +13,7 @@ export class CityCard extends Component {
   mappedCityScoreData = () => {
     return handleCityScoreDisplay(this.props.cityScoreData).map(city => (
       <section>
-        <p className='city-score'>{ city.name }: { city.score }</p>
+        <p className='city-score'>{ city.name }: <span>{ Math.round(city.score) }</span></p>
       </section>
     ))
   }
@@ -23,30 +23,30 @@ export class CityCard extends Component {
 
     return filteredData.map(city => (
       <div className='city-details'>
-        <section className='cost-of-living'>
+        <section className='cost-of-living' id='cost-of-living'>
           <h3>{ city.costOfLiving.name }</h3>
           <p>{ city.costOfLiving.type }</p>
           <p>{ city.costOfLiving.typeData }</p>
         </section>
 
-        <section className='housing'>
+        <section className='housing' id='housing'>
           <h3>{ city.housing.name }</h3>
           <p>{ city.housing.type }</p>
           <p>{ city.housing.typeData }</p>
         </section>
 
-        <section className='unemployment'>
+        <section className='unemployment' id='unemployment'>
           <h3>Unemployment Rate</h3>
           <p>{ city.unemployment.typeData }</p>
         </section>
 
-        <section className='economy'>
+        <section className='economy' id='economy'>
           <h3>{ city.economy.name }</h3>
           <p>{ city.economy.type }</p>
           <p>{ city.economy.typeData }</p>
         </section>
 
-        <section className='job-market'>
+        <section className='job-market' id='job-market'>
           <h3>{ city.jobMarket.name }</h3>
           <p>{ city.jobMarket.type }</p>
           <p>{ city.jobMarket.typeData }</p>
@@ -73,7 +73,8 @@ render() {
       </section>
 
       <section id='score-data' className='score-data'>
-        <h3>City Scores</h3>
+        <h3 className='city-scores-header'>Quality of Life Scores</h3>
+        <p>Out of 10</p>
           { this.mappedCityScoreData() }
         <section className='charts'>
           <VictoryChart
@@ -94,3 +95,5 @@ render() {
 }
 
 export default AppContainer(CityCard);
+
+//Need to style the cards more elegantly and also fix the chart, maybe add more charts too

@@ -33,6 +33,14 @@ export const fetchError = boolean => {
   }
 }
 
+export const submitCity = (city, name) => {
+  return {
+    type: 'SUBMIT_CITY',
+    city,
+    name
+  }
+}
+
 export const fetchScoreData = url => {
   return dispatch => {
 		dispatch(fetchIsLoading(true));

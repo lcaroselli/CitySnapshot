@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
+import AppContainer from '../../containers/AppContainer';
+import CityCard from '../CityCard/CityCard'
 import './ComparePage.css';
+import { handleCityScoreDisplay } from '../../data-helpers/dataCleaner';
 
-const ComparePage = ( { name } ) => {
+
+export class ComparePage extends Component {
+
+  mappedCityScoreData = () => {
+    return handleCityScoreDisplay(this.props.cityScoreData).map(city => (
+      <section>
+        <p className='city-score'>{ city.name }: <span>{ Math.round(city.score) }</span></p>
+      </section>
+    ))
+  }
+
+  render() {
+
   return (
     <div className='compare-wrapper'>
       <h1>Compare Cities</h1>
       <section className='compare-cities'>
         <article className='compare-article'>
-          <h1>{ name }</h1>
-          <p>City 1 Scores</p>
+          <h1>{ this.props.submittedCity.name }</h1>
+          { this.mappedCityScoreData() }
         </article>
 
         <article className='compare-article'>
@@ -22,5 +37,11 @@ const ComparePage = ( { name } ) => {
     </div>
   )
 }
+  }
 
-export default ComparePage;
+export default AppContainer(ComparePage);
+
+//To do:
+//Pass down the searched city's data as well -- this is luckily already in store
+//Set-up city 2's card and grab it's data
+//Set-up comparison card to show who has better (higher) scores over the other (show the higher score in green, the lower score in red)

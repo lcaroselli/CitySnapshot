@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './Search.css';
 import cityList from '../../data-helpers/cityList';
 import CityPage from '../CityPage/CityPage';
+import AppContainer from '../../containers/AppContainer';
 
-export default class Search extends Component {
+export class Search extends Component {
   constructor() {
     super();
     this.state={
@@ -11,7 +12,7 @@ export default class Search extends Component {
       cities: Object.keys(cityList),
       filteredCities: [],
       targetCity: null
-    }
+    };
   }
 
   handleChange(e) {
@@ -27,11 +28,12 @@ export default class Search extends Component {
 
     const filteredCityList = cityList[filteredKey]
 
+    this.props.submitCity(filteredCityList, filteredKey)
+
     this.setState({
       input: e.target.innerHTML,
       targetCity: filteredCityList
     })
-
   }
 
   filterCities(cityName) {
@@ -56,7 +58,7 @@ export default class Search extends Component {
       { !this.state.targetCity &&
         <div className='search-wrapper home'>
           <p className='search-text'>A cost-of-living comparison tool & more</p>
-          <form onSubmit={ e => this.handleEnter(e) }>
+          <form onSubmit={ this.handleEnter }>
             <input placeholder='Search for a City' type='search' value={ this.state.input } onChange={ e => this.handleChange(e) } />
             <div className={ cityDisplay }> { this.state.filteredCities.map(city => {
               return (
@@ -73,3 +75,8 @@ export default class Search extends Component {
     )
   }
 }
+
+export default AppContainer(Search);
+
+//Down/Up arrows on Search results
+//Add cool map stuff to bottom of search?
