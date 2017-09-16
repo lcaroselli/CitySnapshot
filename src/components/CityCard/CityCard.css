@@ -7,14 +7,34 @@
 }
 
 .city-score {
-  font-size: 15px;
-  margin: 15px 20px;
+  color: #252629;
+  font-size: 18px;
+  margin: 10px 20px;
   text-align: left;
 }
 
+.city-score span {
+  font-size: 16px;
+  color: #007EA7;
+}
+
+h3 {
+  color: #007EA7;
+  font-family: 'Roboto', sans-serif;
+  font-size: 35px;
+}
 
 .detail-data, .score-data {
   background: white;
   margin: auto;
   width: 80%;
+}
+
+.score-data {
+  display: inline-block;
+}
+
+.cost-of-living p {
+  margin: 10px 20px;
+  text-align: left;
 }

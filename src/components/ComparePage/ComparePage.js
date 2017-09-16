@@ -1,13 +1,16 @@
 import React from 'react';
+import AppContainer from '../../containers/AppContainer';
 import './ComparePage.css';
 
-const ComparePage = ( { name } ) => {
+
+const ComparePage = ({ city }) => {
+
   return (
     <div className='compare-wrapper'>
       <h1>Compare Cities</h1>
       <section className='compare-cities'>
         <article className='compare-article'>
-          <h1>{ name }</h1>
+          <h1>{ city }</h1>
           <p>City 1 Scores</p>
         </article>
 
@@ -23,4 +26,4 @@ const ComparePage = ( { name } ) => {
   )
 }
 
-export default ComparePage;
+export default AppContainer(ComparePage);
