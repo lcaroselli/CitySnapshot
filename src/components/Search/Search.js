@@ -3,6 +3,9 @@ import './Search.css';
 import cityList from '../../data-helpers/cityList';
 import CityPage from '../CityPage/CityPage';
 import AppContainer from '../../containers/AppContainer';
+import Krakow from '../../assets/krakow.png'
+import Tokyo from '../../assets/tokyo.png'
+import Warsaw from '../../assets/warsaw.png'
 
 export class Search extends Component {
   constructor() {
@@ -71,6 +74,17 @@ export class Search extends Component {
       { this.state.targetCity &&
         <CityPage name={ this.state.input } city={ this.state.targetCity } />
       }
+
+      <section className='map-section'>
+
+        <img className='krakow' src={ Krakow } alt='Krakow city view'/>
+
+        <img className='tokyo' src={ Tokyo } alt='Tokyo city view'/>
+
+        <img className='warsaw' src={ Warsaw } alt='Warsaw city view'/>
+      </section>
+
+      <p className='best-place-text'>Find Your Best Place</p>
     </div>
     )
   }
@@ -79,4 +93,3 @@ export class Search extends Component {
 export default AppContainer(Search);
 
 //Down/Up arrows on Search results
-//Add cool map stuff to bottom of search?

@@ -53,3 +53,39 @@ input {
 .search-text {
   font-size: 18px;
 }
+
+.map-section {
+  background: #C06E68;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.map-section img {
+  border: 20px solid white;
+  border-bottom: 70px solid white;
+  height: 20%;
+  margin-right: 90px;
+  opacity: 1;
+  width: 20%;
+}
+
+.krakow {
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+}
+
+.tokyo {
+  -webkit-transform: rotate(6deg);
+  -moz-transform: rotate(6deg);
+}
+
+.warsaw {
+  -webkit-transform: rotate(15deg);
+  -moz-transform: rotate(15deg);
+}
+
+.best-place-text {
+  color: white;
+  padding: 30px;
+  font-size: 20px;
+}
