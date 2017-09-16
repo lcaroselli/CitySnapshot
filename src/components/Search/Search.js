@@ -28,7 +28,7 @@ export class Search extends Component {
 
     const filteredCityList = cityList[filteredKey]
 
-    this.props.submitCity(filteredCityList)
+    this.props.submitCity(filteredCityList, filteredKey)
 
     this.setState({
       input: e.target.innerHTML,

@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => {
     fetchScoreData: url => dispatch(fetchScoreData(url)),
     fetchDetailData: url => dispatch(fetchDetailData(url)),
     fetchImageData: url => dispatch(fetchImageData(url)),
-    submitCity: city => dispatch(submitCity(city))
+    submitCity: (city, name) => dispatch(submitCity(city, name))
   }
 }
 

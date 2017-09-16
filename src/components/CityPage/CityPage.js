@@ -16,25 +16,25 @@ export class CityPage extends Component {
 
   cityScores() {
   	this.props.fetchScoreData(
-  		`https://api.teleport.org/api/urban_areas/slug:${ this.props.city }/scores/`
+  		`https://api.teleport.org/api/urban_areas/slug:${ this.props.submittedCity.city }/scores/`
   	);
   }
 
   cityDetails() {
     this.props.fetchDetailData(
-  		`https://api.teleport.org/api/urban_areas/slug:${ this.props.city }/details/`
+  		`https://api.teleport.org/api/urban_areas/slug:${ this.props.submittedCity.city }/details/`
   	);
   }
 
   cityImage() {
     this.props.fetchImageData(
-  		`https://api.teleport.org/api/urban_areas/slug:${ this.props.city }/images/`
+  		`https://api.teleport.org/api/urban_areas/slug:${ this.props.submittedCity.city }/images/`
   	);
   }
 
   render() {
 
-    const { hasErred, isLoading, name } = this.props;
+    const { hasErred, isLoading } = this.props;
 
     if(isLoading) {
       return <p>Loading...</p>
@@ -48,7 +48,7 @@ export class CityPage extends Component {
       <div className='city-page'>
         <Search />
         <header>
-          <h1 className='city-page-name'>{ name }</h1>
+          <h1 className='city-page-name'>{ this.props.submittedCity.name }</h1>
 
           <Link exact to='/compare' component={ ComparePage } className='compare-city-button'>Compare City</Link>
         </header>

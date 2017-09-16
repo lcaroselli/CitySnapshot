@@ -33,10 +33,11 @@ export const fetchError = boolean => {
   }
 }
 
-export const submitCity = city => {
+export const submitCity = (city, name) => {
   return {
     type: 'SUBMIT_CITY',
-    city
+    city,
+    name
   }
 }
 

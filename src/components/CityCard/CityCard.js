@@ -5,7 +5,7 @@ import AppContainer from '../../containers/AppContainer';
 import './CityCard.css';
 
 export class CityCard extends Component {
-
+  
   cityImageData = () => {
     return this.props.cityImageData.map(city => ( <img className='city-image' src={ city.image.web }/> ))
   }
