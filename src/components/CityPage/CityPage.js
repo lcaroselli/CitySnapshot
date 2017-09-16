@@ -46,7 +46,6 @@ export class CityPage extends Component {
 
       return (
       <div className='city-page'>
-        <Search />
         <header>
           <h1 className='city-page-name'>{ this.props.submittedCity.name }</h1>
 

@@ -56,9 +56,10 @@ export class Search extends Component {
   render() {
     const cityDisplay = this.state.input ? "filtered-cities" : "hidden";
 
-    return (
+    if(!this.state.targetCity) {
+      return (
       <div>
-      { !this.state.targetCity &&
+
         <div className='search-wrapper home'>
           <p className='search-text'>A cost-of-living comparison tool & more</p>
           <form onSubmit={ this.handleEnter }>
@@ -70,23 +71,25 @@ export class Search extends Component {
             </div>
           </form>
         </div>
+
+        <section className='map-section'>
+
+          <img className='krakow' src={ Krakow } alt='Krakow city view'/>
+
+          <img className='tokyo' src={ Tokyo } alt='Tokyo city view'/>
+
+          <img className='warsaw' src={ Warsaw } alt='Warsaw city view'/>
+        </section>
+
+        <p className='best-place-text'>Find Your Best Place</p>
+      </div>
+    )}
+
+      if(this.state.targetCity) {
+        return (
+          <CityPage name={ this.state.input } city={ this.state.targetCity } />
+        )
       }
-      { this.state.targetCity &&
-        <CityPage name={ this.state.input } city={ this.state.targetCity } />
-      }
-
-      <section className='map-section'>
-
-        <img className='krakow' src={ Krakow } alt='Krakow city view'/>
-
-        <img className='tokyo' src={ Tokyo } alt='Tokyo city view'/>
-
-        <img className='warsaw' src={ Warsaw } alt='Warsaw city view'/>
-      </section>
-
-      <p className='best-place-text'>Find Your Best Place</p>
-    </div>
-    )
   }
 }
 
