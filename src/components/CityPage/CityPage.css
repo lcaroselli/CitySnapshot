@@ -16,10 +16,6 @@
   width: auto;
 }
 
-.city-image {
-  width: 80%;
-}
-
 .city-page-nav {
   background: white;
   display: flex;
@@ -67,18 +63,6 @@
   cursor: pointer;
 }
 
-.score-data, .detail-data {
-  background: white;
-  margin: auto;
-  width: 80%;
-}
-
-.city-score {
-  font-size: 15px;
-  margin: 15px 20px;
-  text-align: left;
-}
-
 header {
   display: flex;
   flex-direction: row;
@@ -87,8 +71,4 @@ header {
 
 .main {
   display: flex;
-}
-
-.charts {
-  width: 30%;
 }

@@ -31,6 +31,7 @@ export default class Search extends Component {
       input: e.target.innerHTML,
       targetCity: filteredCityList
     })
+
   }
 
   filterCities(cityName) {
@@ -53,7 +54,7 @@ export default class Search extends Component {
     return (
       <div>
       { !this.state.targetCity &&
-        <div className='search-wrapper'>
+        <div className='search-wrapper home'>
           <p className='search-text'>A cost-of-living comparison tool & more</p>
           <form onSubmit={ e => this.handleEnter(e) }>
             <input placeholder='Search for a City' type='search' value={ this.state.input } onChange={ e => this.handleChange(e) } />
@@ -65,13 +66,10 @@ export default class Search extends Component {
           </form>
         </div>
       }
-
-      { this.state.targetCity && <CityPage name={ this.state.input } city={ this.state.targetCity } /> }
+      { this.state.targetCity &&
+        <CityPage name={ this.state.input } city={ this.state.targetCity } />
+      }
     </div>
     )
   }
 }
-
-//give cityPage a path
-//should be able to navigate down search with up and down keys
-//Move SEARCH to top of NAV on cityPage

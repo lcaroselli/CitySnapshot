@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { VictoryBar, VictoryChart } from 'victory';
 import { handleCityScoreDisplay, handleCityDetailDisplay } from '../../data-helpers/dataCleaner';
 import AppContainer from '../../containers/AppContainer';
+import './CityCard.css';
 
 export class CityCard extends Component {
 
@@ -11,7 +12,7 @@ export class CityCard extends Component {
 
   mappedCityScoreData = () => {
     return handleCityScoreDisplay(this.props.cityScoreData).map(city => (
-      <section className='city-score-wrapper'>
+      <section>
         <p className='city-score'>{ city.name }: { city.score }</p>
       </section>
     ))
@@ -59,6 +60,11 @@ export class CityCard extends Component {
   }
 
 render() {
+  const cleanedData = handleCityScoreDisplay(this.props.cityScoreData).map(city => {
+    return {
+    name: city.name,
+    score: city.score
+  }})
 
   return (
     <div>
@@ -70,8 +76,12 @@ render() {
         <h3>City Scores</h3>
           { this.mappedCityScoreData() }
         <section className='charts'>
-          <VictoryChart>
-            <VictoryBar />
+          <VictoryChart
+          domainPadding={40}>
+            <VictoryBar
+            data={cleanedData}
+            x='name'
+            y='score' />
           </VictoryChart>
         </section>
       </section>

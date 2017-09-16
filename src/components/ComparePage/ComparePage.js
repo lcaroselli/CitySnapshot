@@ -1,13 +1,13 @@
 import React from 'react';
 import './ComparePage.css';
 
-const ComparePage = () => {
+const ComparePage = ( { name } ) => {
   return (
     <div className='compare-wrapper'>
       <h1>Compare Cities</h1>
       <section className='compare-cities'>
         <article className='compare-article'>
-          <h1>City 1</h1>
+          <h1>{ name }</h1>
           <p>City 1 Scores</p>
         </article>
 
@@ -17,7 +17,7 @@ const ComparePage = () => {
         </article>
 
       </section>
-      
+
       <article className='results'>Chart/Visualization of results when compared to each other - who comes out on top in different categories</article>
     </div>
   )

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import CityCard from '../CityCard/CityCard';
+import Search from '../Search/Search';
+import ComparePage from '../ComparePage/ComparePage';
 import AppContainer from '../../containers/AppContainer';
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import './CityPage.css';
 
 export class CityPage extends Component {
@@ -31,7 +34,7 @@ export class CityPage extends Component {
 
   render() {
 
-    const { hasErred, isLoading } = this.props;
+    const { hasErred, isLoading, name } = this.props;
 
     if(isLoading) {
       return <p>Loading...</p>
@@ -43,19 +46,21 @@ export class CityPage extends Component {
 
       return (
       <div className='city-page'>
+        <Search />
         <header>
-          <h1 className='city-page-name'>{ this.props.name }</h1>
-          <button className='compare-city-button'>Compare City</button>
+          <h1 className='city-page-name'>{ name }</h1>
+
+          <Link exact to='/compare' component={ ComparePage } className='compare-city-button'>Compare City</Link>
         </header>
 
         <section className='main'>
           <nav className='city-page-nav'>
-            <Link to='#score-data'>City Scores</Link>
-            <Link to='#cost-of-living'>Cost of Living</Link>
-            <Link to='#housing'>Housing Costs</Link>
-            <Link to='#unemployment'>Unemployment Rate</Link>
-            <Link to='#economy'>Economy</Link>
-            <Link to='#job-market'>Job Market</Link>
+            <HashLink to='#score-data'>City Scores</HashLink>
+            <HashLink to='#cost-of-living'>Cost of Living</HashLink>
+            <HashLink to='#housing'>Housing Costs</HashLink>
+            <HashLink to='#unemployment'>Unemployment Rate</HashLink>
+            <HashLink to='#economy'>Economy</HashLink>
+            <HashLink to='#job-market'>Job Market</HashLink>
           </nav>
 
           <section className='all-data'>

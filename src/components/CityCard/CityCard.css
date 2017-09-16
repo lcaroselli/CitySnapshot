@@ -1,0 +1,20 @@
+.charts {
+  width: 70%;
+}
+
+.city-image {
+  width: 80%;
+}
+
+.city-score {
+  font-size: 15px;
+  margin: 15px 20px;
+  text-align: left;
+}
+
+
+.detail-data, .score-data {
+  background: white;
+  margin: auto;
+  width: 80%;
+}
