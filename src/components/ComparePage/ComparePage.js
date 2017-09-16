@@ -3,14 +3,14 @@ import AppContainer from '../../containers/AppContainer';
 import './ComparePage.css';
 
 
-const ComparePage = ({ city }) => {
+const ComparePage = ({ submittedCity }) => {
 
   return (
     <div className='compare-wrapper'>
       <h1>Compare Cities</h1>
       <section className='compare-cities'>
         <article className='compare-article'>
-          <h1>{ city }</h1>
+          <h1>{ submittedCity }</h1>
           <p>City 1 Scores</p>
         </article>
 
@@ -27,3 +27,8 @@ const ComparePage = ({ city }) => {
 }
 
 export default AppContainer(ComparePage);
+
+//To do:
+//Pass down the searched city's data as well -- this is luckily already in store
+//Set-up city 2's card and grab it's data
+//Set-up comparison card to show who has better (higher) scores over the other (show the higher score in green, the lower score in red)

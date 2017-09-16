@@ -76,10 +76,5 @@ export class CityPage extends Component {
 export default AppContainer(CityPage);
 
 
-//When a user selects a city from the city list page, this CityPage component renders
-
-//As you scroll down, the aside highlights which section you are at...
-
-//Add a search here - maybe can re-use component??
-
-//Compare button should redirect to compare page with the first city already populated. Second city you choose from a list.
+//As you scroll down, the aside highlights which section you are at
+//Compare button to be a dropdown city list

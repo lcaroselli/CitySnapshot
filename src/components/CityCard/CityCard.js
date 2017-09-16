@@ -95,3 +95,5 @@ render() {
 }
 
 export default AppContainer(CityCard);
+
+//Need to style the cards more elegantly and also fix the chart, maybe add more charts too

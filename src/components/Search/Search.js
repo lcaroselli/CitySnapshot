@@ -77,3 +77,6 @@ export class Search extends Component {
 }
 
 export default AppContainer(Search);
+
+//Down/Up arrows on Search results
+//Add cool map stuff to bottom of search?
