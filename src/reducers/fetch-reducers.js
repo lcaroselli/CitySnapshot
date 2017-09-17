@@ -53,3 +53,27 @@ export const fetchScoreSuccess = (state = [], action) => {
       return state;
   }
 }
+
+export const fetchScoreSuccess2 = (state = [], action) => {
+  switch(action.type) {
+    case 'FETCH_SCORE_SUCCESSFUL_2':
+      return action.data.categories.map(image => {
+        return Object.assign({}, image);
+      })
+
+    default:
+      return state;
+  }
+}
+
+export const fetchImageSuccess2 = (state = [], action) => {
+  switch(action.type) {
+    case 'FETCH_IMAGE_SUCCESSFUL_2':
+      return action.data.photos.map(image => {
+        return Object.assign({}, image);
+      })
+
+    default:
+      return state;
+  }
+}

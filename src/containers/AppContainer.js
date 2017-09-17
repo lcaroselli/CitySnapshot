@@ -1,23 +1,32 @@
 import { connect } from 'react-redux';
-import { fetchScoreData, fetchDetailData, fetchImageData, submitCity } from '../actions';
+import { fetchScoreData, fetchScoreData2, fetchDetailData, fetchImageData, fetchImageData2, submitCity, submitCity2 } from '../actions';
 
 const mapStateToProps = store => {
   return {
     cityScoreData: store.fetchScoreSuccess,
+    cityScoreData2: store.fetchScoreSuccess2,
     cityDetailData: store.fetchDetailSuccess,
     cityImageData: store.fetchImageSuccess,
+    cityImageData2: store.fetchImageSuccess2,
     isLoading: store.isLoading,
     hasErred: store.hasErred,
-    submittedCity: store.submitCitySuccess
+    submittedCity: store.submitCitySuccess,
+    submittedCity2: store.submitCitySuccess2
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     fetchScoreData: url => dispatch(fetchScoreData(url)),
+    fetchScoreData2: url => dispatch(fetchScoreData2(url)),
+
     fetchDetailData: url => dispatch(fetchDetailData(url)),
+
     fetchImageData: url => dispatch(fetchImageData(url)),
-    submitCity: (city, name) => dispatch(submitCity(city, name))
+    fetchImageData2: url => dispatch(fetchImageData2(url)),
+
+    submitCity: (city, name) => dispatch(submitCity(city, name)),
+    submitCity2: (city, name) => dispatch(submitCity2(city, name))
   }
 }
 

@@ -19,9 +19,23 @@ export const fetchScoreSuccessful = data => {
   }
 }
 
+export const fetchScoreSuccessful2 = data => {
+  return {
+    type: 'FETCH_SCORE_SUCCESSFUL_2',
+    data
+  }
+}
+
 export const fetchImageSuccessful = data => {
   return {
     type: 'FETCH_IMAGE_SUCCESSFUL',
+    data
+  }
+}
+
+export const fetchImageSuccessful2 = data => {
+  return {
+    type: 'FETCH_IMAGE_SUCCESSFUL_2',
     data
   }
 }
@@ -41,6 +55,14 @@ export const submitCity = (city, name) => {
   }
 }
 
+export const submitCity2 = (city, name) => {
+  return {
+    type: 'SUBMIT_CITY_2',
+    city,
+    name
+  }
+}
+
 export const fetchScoreData = url => {
   return dispatch => {
 		dispatch(fetchIsLoading(true));
@@ -55,6 +77,24 @@ export const fetchScoreData = url => {
 			})
 			.then(response => response.json())
       .then(parsedResponse => dispatch(fetchScoreSuccessful(parsedResponse)))
+			.catch(() => dispatch(fetchError(true)));
+	}
+}
+
+export const fetchScoreData2 = url => {
+  return dispatch => {
+		dispatch(fetchIsLoading(true));
+		fetch(url)
+			.then(response => {
+				if (response.status !== 200) {
+					dispatch(fetchError(true));
+				} else {
+            dispatch(fetchIsLoading(false));
+				    return response;
+         }
+			})
+			.then(response => response.json())
+      .then(parsedResponse => dispatch(fetchScoreSuccessful2(parsedResponse)))
 			.catch(() => dispatch(fetchError(true)));
 	}
 }
@@ -91,6 +131,24 @@ export const fetchImageData = url => {
 			})
 			.then(response => response.json())
       .then(parsedResponse => dispatch(fetchImageSuccessful(parsedResponse)))
+			.catch(() => dispatch(fetchError(true)));
+	}
+}
+
+export const fetchImageData2 = url => {
+  return dispatch => {
+		dispatch(fetchIsLoading(true));
+		fetch(url)
+			.then(response => {
+				if (response.status !== 200) {
+					dispatch(fetchError(true));
+				} else {
+            dispatch(fetchIsLoading(false));
+				    return response;
+         }
+			})
+			.then(response => response.json())
+      .then(parsedResponse => dispatch(fetchImageSuccessful2(parsedResponse)))
 			.catch(() => dispatch(fetchError(true)));
 	}
 }

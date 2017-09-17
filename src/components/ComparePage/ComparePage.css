@@ -68,3 +68,18 @@ h5 span {
   align-items: center;
   justify-content: center;
 }
+
+.filtered-cities {
+  max-height: 100px;
+  overflow: scroll;
+  padding: 10px;
+  width: 50%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.form-div {
+  height: 195px;
+}
