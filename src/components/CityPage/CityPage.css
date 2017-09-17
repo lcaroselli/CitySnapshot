@@ -20,24 +20,24 @@
   background: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  height: 455px;
   margin: 0px 20px;
 }
 
 .compare-city-button {
-  background: white;
-  border: 2px solid white;;
+  background: #252629;
+  border: 2px solid white;
+  color: white;
   border-radius: 8%;
-  color: #252629;
   font-size: 15px;
-  height: 50px;
-  width: 150px;
-  margin: auto;
+  text-decoration: none;
+  padding: 10px;
+  vertical-align: middle;
 }
 
 .compare-city-button:hover {
   cursor: pointer;
-  background: #252629;
+  background: #007EA7;
   border: 2px solid white;
   color: white;
   transition: all .3s ease-in;

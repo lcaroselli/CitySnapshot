@@ -19,6 +19,18 @@ export class ComparePage extends Component {
     return this.props.cityImageData.map(city => ( <img className='city-image' src={ city.image.web }/> ))
   }
 
+  mappedCityScoreData2 = () => {
+    return handleCityScoreDisplay(this.props.cityScoreData).map(city => (
+      <section>
+        <p className='scored'>{ city.name }: <span>{ Math.round(city.score) }</span></p>
+      </section>
+    ))
+  }
+
+  cityImageData2 = () => {
+    return this.props.cityImageData.map(city => ( <img className='city-image' src={ city.image.web }/> ))
+  }
+
   render() {
 
   return (
@@ -33,13 +45,22 @@ export class ComparePage extends Component {
         </article>
 
         <article className='compare-article'>
-          <h1>City 2</h1>
-          <p>City 2 Scores</p>
+          <h1>{ this.props.submittedCity.name }</h1>
+          { this.cityImageData2() }
+          <p>Quality of Life Scores</p>
+          { this.mappedCityScoreData2() }
         </article>
 
       </section>
 
-      <article className='results'>Chart/Visualization of results when compared to each other - who comes out on top in different categories</article>
+      <article className='results'>
+        <h5>{ this.props.submittedCity.name } <span>V.</span> { this.props.submittedCity.name }</h5>
+        <section>
+          <span>{ this.mappedCityScoreData() }</span>
+          <span> V. </span>
+          <span>{ this.mappedCityScoreData2() }</span>
+        </section>
+      </article>
     </div>
   )
 }

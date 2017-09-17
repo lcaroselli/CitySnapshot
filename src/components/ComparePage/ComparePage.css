@@ -51,3 +51,20 @@
 .score-quality-title {
   margin: 0;
 }
+
+.results h5{
+  color: #007EA7;
+  font-size: 25px;
+}
+
+h5 span {
+  color: green;
+  font-size: 14px;
+}
+
+.results section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

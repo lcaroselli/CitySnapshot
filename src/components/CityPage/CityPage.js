@@ -47,9 +47,7 @@ export class CityPage extends Component {
       return (
       <div className='city-page'>
         <header>
-          <h1 className='city-page-name'>{ this.props.submittedCity.name }</h1>
-
-          <Link exact to='/compare' component={ ComparePage } className='compare-city-button'>Compare City</Link>
+          <h1 className='city-page-name'>{ this.props.submittedCity.name } <Link exact to='/compare' component={ ComparePage } className='compare-city-button'>Compare City</Link></h1>
         </header>
 
         <section className='main'>
@@ -57,9 +55,8 @@ export class CityPage extends Component {
             <HashLink to='#score-data'>City Scores</HashLink>
             <HashLink to='#cost-of-living'>Cost of Living</HashLink>
             <HashLink to='#housing'>Housing Costs</HashLink>
-            <HashLink to='#unemployment'>Unemployment Rate</HashLink>
+            <HashLink to='#unemployment'>Unemployment</HashLink>
             <HashLink to='#economy'>Economy</HashLink>
-            <HashLink to='#job-market'>Job Market</HashLink>
           </nav>
 
           <section className='all-data'>
@@ -75,5 +72,4 @@ export class CityPage extends Component {
 export default AppContainer(CityPage);
 
 
-//As you scroll down, the aside highlights which section you are at
-//Compare button to be a dropdown city list
+//As you scroll down, the aside highlights which section you are at and scrolls with you

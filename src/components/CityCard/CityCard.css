@@ -19,9 +19,17 @@
 }
 
 h3 {
+  background: white;
   color: #007EA7;
   font-family: 'Roboto', sans-serif;
   font-size: 35px;
+  width: 80%;
+  margin: auto;
+}
+
+h3 p {
+  font-size: 16px;
+  color: #252629;
 }
 
 .detail-data, .score-data {
@@ -31,10 +39,17 @@ h3 {
 }
 
 .score-data {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
 }
 
-.cost-of-living p {
+.cost-of-living-currency, .housing-currency {
+  color: #007EA7;
+}
+
+.cost-of-living-label, .housing-label, .unemployment p, .economy p {
+  color: #252629;
+  font-size: 18px;
   margin: 10px 20px;
   text-align: left;
 }
