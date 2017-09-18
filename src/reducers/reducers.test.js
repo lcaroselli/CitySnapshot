@@ -55,11 +55,6 @@ describe('fetch is loading reducer', () => {
   });
 });
 
-
-
-
-//THIS IS WHERE YOU STOPPED
-
 describe('fetch image success reducer', () => {
   test ('should give me a default state', () => {
     const action = { type: '' };
@@ -69,10 +64,10 @@ describe('fetch image success reducer', () => {
     expect(fetchImageSuccess(undefined, action)).toEqual(expectedReturn);
   });
 
-  test.skip ('should give me an image of the applicable city when successful', () => {
+  test.skip ('should give me an image of the applicable city when successful', () => { const data = []
     const action = {
       type: 'FETCH_IMAGE_SUCCESSFUL',
-    	data: []
+    	data: data
     };
 
     const expectedReturn = { data: [] };
@@ -82,61 +77,61 @@ describe('fetch image success reducer', () => {
 });
 
 describe('fetch image success comparison reducer', () => {
-  test.skip ('should give me a default state', () => {
+  test ('should give me a default state', () => {
     const action = { type: '' };
 
     const expectedReturn = [];
 
-    expect(fetchImageSuccess(undefined, action)).toEqual(expectedReturn);
+    expect(fetchImageSuccess2(undefined, action)).toEqual(expectedReturn);
   });
 });
 
 describe('fetch detail success reducer', () => {
-  test.skip ('should give me a default state', () => {
+  test  ('should give me a default state', () => {
     const action = { type: '' };
 
     const expectedReturn = [];
 
-    expect(fetchImageSuccess(undefined, action)).toEqual(expectedReturn);
+    expect(fetchDetailSuccess(undefined, action)).toEqual(expectedReturn);
   });
 });
 
 describe('fetch score success reducer', () => {
-  test.skip ('should give me a default state', () => {
+  test ('should give me a default state', () => {
     const action = { type: '' };
 
     const expectedReturn = [];
 
-    expect(fetchImageSuccess(undefined, action)).toEqual(expectedReturn);
+    expect(fetchScoreSuccess(undefined, action)).toEqual(expectedReturn);
   });
 });
 
 describe('fetch score success comparison reducer', () => {
-  test.skip ('should give me a default state', () => {
+  test ('should give me a default state', () => {
     const action = { type: '' };
 
     const expectedReturn = [];
 
-    expect(fetchImageSuccess(undefined, action)).toEqual(expectedReturn);
+    expect(fetchScoreSuccess2(undefined, action)).toEqual(expectedReturn);
   });
 });
 
 describe('submit city reducer', () => {
-  test.skip ('should give me a default state', () => {
+  test ('should give me a default state', () => {
     const action = { type: '' };
 
-    const expectedReturn = [];
+    const expectedReturn = '';
 
-    expect(fetchImageSuccess(undefined, action)).toEqual(expectedReturn);
+    expect(submitCitySuccess(undefined, action)).toEqual(expectedReturn);
   });
 });
 
 describe('submit city comparison reducer', () => {
-  test.skip ('should give me a default state', () => {
+  test ('should give me a default state', () => {
     const action = { type: '' };
 
-    const expectedReturn = [];
+    const expectedReturn = '';
 
-    expect(fetchImageSuccess(undefined, action)).toEqual(expectedReturn);
+    expect(submitCitySuccess2(undefined, action)).toEqual(expectedReturn);
   });
 });

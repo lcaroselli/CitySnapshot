@@ -9,7 +9,7 @@ describe('CityCard', () => {
     wrapper = shallow(<CityCard />);
   });
 
-  test.skip('should exist', () => {
+  test.skip ('should exist', () => {
     expect(wrapper).toBeDefined();
   });
 
@@ -32,5 +32,4 @@ describe('CityCard', () => {
   test.skip ('should render cost-of-living data', () => {
     expect(wrapper.find('.detail-data').length).toEqual(1);
   });
-
 });
