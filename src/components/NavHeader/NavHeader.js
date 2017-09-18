@@ -25,5 +25,3 @@ export default NavHeader;
 
 
 // <NavLink activeClassName='selected' exact to='/checklist' component={ ChecklistPage }>Moving Checklist</NavLink>
-
-// <NavLink activeClassName='selected' exact to='/compare' component={ ComparePage }>Compare Cities</NavLink>

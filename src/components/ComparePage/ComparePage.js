@@ -127,7 +127,6 @@ export class ComparePage extends Component {
         <h5>{ this.props.submittedCity.name } <span>V.</span> { this.props.submittedCity2.name }</h5>
         <section>
           <span>{ this.mappedCityScoreData() }</span>
-          <span> V. </span>
           <span>{ this.mappedCityScoreData2() }</span>
         </section>
       </article>
@@ -138,5 +137,5 @@ export class ComparePage extends Component {
 
 export default AppContainer(ComparePage);
 
-//To do:
-  //Set-up comparison card to show who has better (higher) scores over the other (show the higher score in green, the lower score in red)
+//Clean-up the functionality here
+//Set-up comparison card to show who has better (higher) scores over the other (show the higher score in green, the lower score in red)

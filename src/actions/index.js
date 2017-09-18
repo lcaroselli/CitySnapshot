@@ -1,3 +1,10 @@
+export const fetchError = boolean => {
+  return {
+    type: 'FETCH_ERROR',
+    hasErred: boolean
+  }
+}
+
 export const fetchIsLoading = boolean => {
   return {
     type: 'FETCH_IS_LOADING',
@@ -8,20 +15,6 @@ export const fetchIsLoading = boolean => {
 export const fetchDetailSuccessful = data => {
   return {
     type: 'FETCH_DETAIL_SUCCESSFUL',
-    data
-  }
-}
-
-export const fetchScoreSuccessful = data => {
-  return {
-    type: 'FETCH_SCORE_SUCCESSFUL',
-    data
-  }
-}
-
-export const fetchScoreSuccessful2 = data => {
-  return {
-    type: 'FETCH_SCORE_SUCCESSFUL_2',
     data
   }
 }
@@ -40,10 +33,17 @@ export const fetchImageSuccessful2 = data => {
   }
 }
 
-export const fetchError = boolean => {
+export const fetchScoreSuccessful = data => {
   return {
-    type: 'FETCH_ERROR',
-    hasErred: boolean
+    type: 'FETCH_SCORE_SUCCESSFUL',
+    data
+  }
+}
+
+export const fetchScoreSuccessful2 = data => {
+  return {
+    type: 'FETCH_SCORE_SUCCESSFUL_2',
+    data
   }
 }
 

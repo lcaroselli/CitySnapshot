@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import { VictoryBar, VictoryGroup, VictoryTheme, VictoryChart } from 'victory';
+import { VictoryBar, VictoryChart } from 'victory';
 import { handleCityScoreDisplay, handleCityDetailDisplay } from '../../data-helpers/dataCleaner';
 import AppContainer from '../../containers/AppContainer';
 import './CityCard.css';
+import colIcon from '../../assets/dollar-bill.svg';
+import homeIcon from '../../assets/home.svg';
+import profileIcon from '../../assets/profile.svg';
+import worldIcon from '../../assets/grid-world.svg';
 
 export class CityCard extends Component {
 
@@ -24,22 +28,22 @@ export class CityCard extends Component {
     return filteredData.map(city => (
       <div className='city-details'>
         <section className='cost-of-living' id='cost-of-living'>
-          <h3>{ city.costOfLiving.name }</h3>
+          <h3>{ city.costOfLiving.name } <img src={ colIcon } alt='cost of living icon'/></h3>
           <p>{ city.costOfLiving.type }</p>
         </section>
 
         <section className='housing' id='housing'>
-          <h3>{ city.housing.name }</h3>
+          <h3>{ city.housing.name } <img src={ homeIcon } alt='housing icon'/></h3>
           <p>{ city.housing.type }</p>
         </section>
 
         <section className='unemployment' id='unemployment'>
-          <h3>Unemployment Rate</h3>
+          <h3>Unemployment Rate <img src={ profileIcon } alt='unemployment icon'/></h3>
           <p>{ city.unemployment.typeData }%</p>
         </section>
 
         <section className='economy' id='economy'>
-          <h3>{ city.economy.name }</h3>
+          <h3>{ city.economy.name } <img src={ worldIcon } alt='economy icon'/></h3>
           <p>{ city.economy.type }: { city.economy.typeData }%</p>
         </section>
       </div>
@@ -84,5 +88,3 @@ render() {
 }
 
 export default AppContainer(CityCard);
-
-//Need to style the cards more elegantly and also fix the chart, maybe add more charts too

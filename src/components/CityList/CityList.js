@@ -20,5 +20,3 @@ const CityList = ({ history }) => {
 }
 
 export default CityList;
-
-//onclick for buttons redirect to city page with props -- FIRST STEP IS TO GET CITYPAGE AN ACTUAL PATH

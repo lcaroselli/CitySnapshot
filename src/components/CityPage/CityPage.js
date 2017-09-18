@@ -33,17 +33,6 @@ export class CityPage extends Component {
   }
 
   render() {
-
-    const { hasErred, isLoading } = this.props;
-
-    if(isLoading) {
-      return <p>Loading...</p>
-    }
-
-    if(hasErred) {
-      return <p>Error...</p>
-    }
-
       return (
       <div className='city-page'>
         <header>
@@ -68,8 +57,4 @@ export class CityPage extends Component {
   }
 }
 
-
 export default AppContainer(CityPage);
-
-
-//As you scroll down, the aside highlights which section you are at and scrolls with you

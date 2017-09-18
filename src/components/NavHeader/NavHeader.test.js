@@ -31,6 +31,6 @@ describe('NavHeader', () => {
   })
 
   test('should return NavLinks', () => {
-    expect(wrapper.find('NavLink').length).toEqual(4);
+    expect(wrapper.find('NavLink').length).toEqual(2);
   })
 })

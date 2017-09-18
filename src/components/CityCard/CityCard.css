@@ -18,18 +18,34 @@
   color: #007EA7;
 }
 
-h3 {
-  background: white;
-  color: #007EA7;
-  font-family: 'Roboto', sans-serif;
-  font-size: 35px;
-  width: 80%;
+.city-scores-header {
   margin: auto;
+  text-align: center;
 }
 
-h3 p {
-  font-size: 16px;
+.city-scores-all, .cost-of-living, .economy, .housing, .score-section, .unemployment {
+  border-left: 2px solid #007EA7;
+  margin-bottom: 100px;
+  margin-left: 30px;
+  padding-bottom: 20px;
+}
+
+.cost-of-living-label, .economy p, .housing-label, .unemployment p {
   color: #252629;
+  font-size: 18px;
+  margin: 10px 20px;
+  text-align: left;
+}
+
+.cost-of-living img, .economy img, .housing img, .unemployment img {
+  height: 30px;
+  margin-left: 5px;
+  vertical-align: middle;
+  width: 30px;
+}
+
+.cost-of-living-currency, .housing-currency {
+  color: #007EA7;
 }
 
 .detail-data, .score-data {
@@ -38,18 +54,23 @@ h3 p {
   width: 80%;
 }
 
+h3 {
+  background: white;
+  color: #007EA7;
+  font-family: 'Roboto', sans-serif;
+  font-size: 35px;
+  margin-left: 20px;
+  text-align: left;
+  width: 80%;
+}
+
+h3 p {
+  font-size: 16px;
+  color: #252629;
+}
+
+
 .score-data {
   display: flex;
   flex-direction: row;
-}
-
-.cost-of-living-currency, .housing-currency {
-  color: #007EA7;
-}
-
-.cost-of-living-label, .housing-label, .unemployment p, .economy p {
-  color: #252629;
-  font-size: 18px;
-  margin: 10px 20px;
-  text-align: left;
 }

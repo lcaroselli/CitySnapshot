@@ -1,8 +1,8 @@
 import React from 'react';
 import './ChecklistPage.css';
+import Box from '../../assets/box.svg';
 import List from '../../assets/list.svg';
 import Truck from '../../assets/truck.svg';
-import Box from '../../assets/box.svg';
 
 const ChecklistPage = () => {
   return (
@@ -18,5 +18,3 @@ const ChecklistPage = () => {
 }
 
 export default ChecklistPage;
-
-//onClick to display a new container of checklists

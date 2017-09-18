@@ -10,12 +10,11 @@ describe('App', () => {
     wrapper = shallow(<App />);
   })
 
-  test('should exist', () => {
+  test ('should exist', () => {
     expect(wrapper).toBeDefined();
   })
 
-  test('should render applicable components upon page load', () => {
+  test ('should render applicable components upon page load', () => {
     expect(wrapper.find('NavHeader').length).toEqual(1);
-    expect(wrapper.find('Search').length).toEqual(1);
   })
 })
