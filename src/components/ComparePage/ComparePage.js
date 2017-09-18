@@ -77,7 +77,7 @@ export class ComparePage extends Component {
   }
 
   render() {
-    const cityDisplay = this.state.input ? "filtered-cities" : "hidden";
+    const cityDisplay = this.state.input ? "filtered-cities-compare" : "hidden";
 
   return (
     <div>
