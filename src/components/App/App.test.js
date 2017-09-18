@@ -8,13 +8,13 @@ describe('App', () => {
 
   beforeEach(() => {
     wrapper = shallow(<App />);
-  })
+  });
 
   test ('should exist', () => {
     expect(wrapper).toBeDefined();
-  })
+  });
 
   test ('should render applicable components upon page load', () => {
     expect(wrapper.find('NavHeader').length).toEqual(1);
-  })
-})
+  });
+});

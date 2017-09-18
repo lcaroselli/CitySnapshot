@@ -8,17 +8,17 @@ describe('Search', () => {
 
   beforeEach(() => {
     wrapper = shallow(<Search />);
-  })
+  });
 
   test.skip('should exist', () => {
     expect(wrapper).toBeDefined();
-  })
+  });
 
   test.skip('should return a containing div', () => {
     expect(wrapper.find('.search-wrapper').length).toEqual(1);
-  })
+  });
 
   test.skip('should return a search bar', () => {
     expect(wrapper.find('input').length).toEqual(1);
-  })
-})
+  });
+});

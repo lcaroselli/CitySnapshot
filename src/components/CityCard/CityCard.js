@@ -65,7 +65,7 @@ render() {
 
   return (
     <div>
-      <section>
+      <section className='header-image'>
         { this.cityImageData() }
       </section>
 
