@@ -15,15 +15,15 @@ export class ComparePage extends Component {
     };
   }
 
-  comparedCityScores() {
+  comparedCityScores(city) {
     this.props.fetchScoreData2(
-      `https://api.teleport.org/api/urban_areas/slug:${ this.props.submittedCity2.city }/scores/`
+      `https://api.teleport.org/api/urban_areas/slug:${city}/scores/`
     );
   }
 
-  comparedCityImage() {
+  comparedCityImage(city) {
     this.props.fetchImageData2(
-      `https://api.teleport.org/api/urban_areas/slug:${ this.props.submittedCity2.city }/images/`
+      `https://api.teleport.org/api/urban_areas/slug:${city}/images/`
     );
   }
 
@@ -52,8 +52,8 @@ export class ComparePage extends Component {
 
     this.props.submitCity2(filteredCityList, filteredKey);
 
-    this.comparedCityScores();
-    this.comparedCityImage();
+    this.comparedCityScores(filteredCityList);
+    this.comparedCityImage(filteredCityList);
 
     this.setState({
       input: e.target.innerHTML
