@@ -14,6 +14,12 @@ export class CityCard extends Component {
     return this.props.cityImageData.map(city => ( <img className='city-image' src={ city.image.web }/> ))
   }
 
+  citySummaryData = () => {
+    return (
+      <p>{ this.props.summaryData }</p>
+    )
+  }
+
   mappedCityScoreData = () => {
     return handleCityScoreDisplay(this.props.cityScoreData).map(city => (
       <section>
@@ -65,6 +71,9 @@ render() {
 
       <section>
       <h3 className='city-scores-header'>Quality of Life Scores <p>Out of 10</p></h3>
+      <section className='summary-data'>
+      { this.citySummaryData() }
+      </section>
       <section id='score-data' className='score-data'>
         <section className='city-scores-all'>{ this.mappedCityScoreData() }</section>
         <section className='charts'>

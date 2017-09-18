@@ -18,6 +18,16 @@ export const fetchErred = (state = false, action) => {
   }
 }
 
+export const fetchSummarySuccess = (state = [], action) => {
+  switch(action.type) {
+    case 'FETCH_SUMMARY':
+      return action.data.summary.replace(/(<([^>]+)>)/ig,"")
+
+    default:
+      return state;
+  }
+}
+
 export const fetchImageSuccess = (state = [], action) => {
   switch(action.type) {
     case 'FETCH_IMAGE_SUCCESSFUL':
@@ -33,8 +43,8 @@ export const fetchImageSuccess = (state = [], action) => {
 export const fetchDetailSuccess = (state = [], action) => {
   switch(action.type) {
     case 'FETCH_DETAIL_SUCCESSFUL':
-      return action.data.categories.map(image => {
-        return Object.assign({}, image);
+      return action.data.categories.map(detail => {
+        return Object.assign({}, detail);
       })
 
     default:
@@ -45,8 +55,8 @@ export const fetchDetailSuccess = (state = [], action) => {
 export const fetchScoreSuccess = (state = [], action) => {
   switch(action.type) {
     case 'FETCH_SCORE_SUCCESSFUL':
-      return action.data.categories.map(image => {
-        return Object.assign({}, image);
+      return action.data.categories.map(score => {
+        return Object.assign({}, score);
       })
 
     default:
@@ -57,8 +67,8 @@ export const fetchScoreSuccess = (state = [], action) => {
 export const fetchScoreSuccess2 = (state = [], action) => {
   switch(action.type) {
     case 'FETCH_SCORE_SUCCESSFUL_2':
-      return action.data.categories.map(image => {
-        return Object.assign({}, image);
+      return action.data.categories.map(score => {
+        return Object.assign({}, score);
       })
 
     default:

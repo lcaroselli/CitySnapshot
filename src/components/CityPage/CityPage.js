@@ -12,6 +12,7 @@ export class CityPage extends Component {
     this.cityScores();
     this.cityDetails();
     this.cityImage();
+    this.citySummary();
   }
 
   cityScores() {
@@ -30,6 +31,12 @@ export class CityPage extends Component {
     this.props.fetchImageData(
   		`https://api.teleport.org/api/urban_areas/slug:${ this.props.submittedCity.city }/images/`
   	);
+  }
+
+  citySummary() {
+    this.props.fetchSummaryData(
+      `https://api.teleport.org/api/urban_areas/slug:${ this.props.submittedCity.city }/scores/`
+    );
   }
 
   render() {

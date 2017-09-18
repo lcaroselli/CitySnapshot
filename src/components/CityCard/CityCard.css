@@ -25,7 +25,7 @@
 
 .city-scores-all, .cost-of-living, .economy, .housing, .score-section, .unemployment {
   border-left: 2px solid #007EA7;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   margin-left: 30px;
   padding-bottom: 20px;
 }
@@ -69,8 +69,15 @@ h3 p {
   color: #252629;
 }
 
-
 .score-data {
   display: flex;
   flex-direction: row;
+}
+
+.summary-data {
+  background: white;
+  font-size: 20px;
+  padding: 40px;
+  margin: auto;
+  width: 80%;
 }

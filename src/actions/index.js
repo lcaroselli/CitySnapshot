@@ -47,6 +47,13 @@ export const fetchScoreSuccessful2 = data => {
   }
 }
 
+export const fetchSummarySuccessful = data => {
+  return {
+    type: 'FETCH_SUMMARY',
+    data
+  }
+}
+
 export const submitCity = (city, name) => {
   return {
     type: 'SUBMIT_CITY',
@@ -149,6 +156,24 @@ export const fetchImageData2 = url => {
 			})
 			.then(response => response.json())
       .then(parsedResponse => dispatch(fetchImageSuccessful2(parsedResponse)))
+			.catch(() => dispatch(fetchError(true)));
+	}
+}
+
+export const fetchSummaryData = url => {
+  return dispatch => {
+		dispatch(fetchIsLoading(true));
+		fetch(url)
+			.then(response => {
+				if (response.status !== 200) {
+					dispatch(fetchError(true));
+				} else {
+            dispatch(fetchIsLoading(false));
+				    return response;
+         }
+			})
+			.then(response => response.json())
+      .then(parsedResponse => dispatch(fetchSummarySuccessful(parsedResponse)))
 			.catch(() => dispatch(fetchError(true)));
 	}
 }
