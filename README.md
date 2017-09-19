@@ -1,6 +1,6 @@
 # CitySnapshot - Laura Caroselli 
 
-![CitySnapshot Screenshot](/assets/CitySnapshot.png?raw=true "CitySnapshot Screenshot")
+![CitySnapshot Screenshot](/src/assets/CitySnapshot.png?raw=true "CitySnapshot Screenshot")
 
 ## Introduction
 This application pulls data from multiple endpoints to generate cost-of-living data and create a 'snapshot' of a searched city's quality of life. The user also has the ability to compare city data and generate a moving checklist which will round out their total moving costs. 
