@@ -1,15 +1,16 @@
 import React from 'react';
 import CityPage from './CityPage';
 import { shallow, mount } from 'enzyme';
+import { withRouter } from 'react-router';
 
 describe('CityPage', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<CityPage />);
+    wrapper = withRouter(<CityPage />);
   });
 
-  test.skip ('should exist', () => {
+  test ('should exist', () => {
     expect(wrapper).toBeDefined();
   });
 

@@ -1,19 +1,21 @@
 import React from 'react';
 import CityCard from './CityCard';
+import { withRouter } from 'react-router';
 import { shallow, mount } from 'enzyme';
 
 describe('CityCard', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<CityCard />);
+    wrapper =  withRouter(<CityCard />);
   });
 
-  test.skip ('should exist', () => {
+  test ('should exist', () => {
     expect(wrapper).toBeDefined();
   });
 
-  test.skip ('should render an image', () => {
+  test ('should render an image', () => {
+    wrapper = shallow(<CityCard />)
     expect(wrapper.find('.header-image').length).toEqual(1);
   });
 

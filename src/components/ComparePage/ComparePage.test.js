@@ -1,15 +1,16 @@
 import React from 'react';
 import ComparePage from './ComparePage';
 import { shallow, mount } from 'enzyme';
+import { withRouter } from 'react-router';
 
 describe('ComparePage', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<ComparePage />);
+    wrapper = withRouter(<ComparePage />);
   });
 
-  test.skip ('should exist', () => {
+  test ('should exist', () => {
     expect(wrapper).toBeDefined();
   });
 
