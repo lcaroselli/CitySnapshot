@@ -5,13 +5,44 @@ import { withRouter } from 'react-router';
 
 describe('ComparePage', () => {
   let wrapper;
+  let mountWrapper;
 
-  beforeEach(() => {
-    wrapper = withRouter(<ComparePage />);
+  const handleChangeFn = jest.fn();
+
+  beforeEach( () => {
+    wrapper = shallow(<ComparePage
+                      onChange = { handleChangeFn } />);
+    mountWrapper = mount(<ComparePage
+                      onChange = { handleChangeFn } />);
   });
 
-  test ('should exist', () => {
-    expect(wrapper).toBeDefined();
+  test.skip ('should exist', () => {
+    let wrapperRoute =  withRouter(<ComparePage />);
+    expect(wrapperRoute).toBeDefined();
+  });
+
+  test.skip ('should have a default state', () => {
+   expect(wrapper.state()).toEqual({
+     input: '',
+     cities: Object.keys(cityList),
+     filteredCities: []
+   });
+ });
+
+  test.skip ('should have a function for onChange', () => {
+    expect(mountWrapper.props().handleChange).toEqual(handleChangeFn);
+  });
+
+  test.skip ('should handle a change in the input field', () => {
+    const inputField = wrapper.find('input');
+
+    inputField.simulate('change');
+
+    expect(handleChangeFn).toHaveBeenCalled();
+    expect(handleChangeFn).toHaveBeenCalledTimes(1);
+
+    inputField.simulate('change');
+    expect(handleChangeFn).toHaveBeenCalledTimes(2);
   });
 
   test.skip ('should render a search input to select a city to compare to', () => {
