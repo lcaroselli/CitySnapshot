@@ -51,8 +51,7 @@ export class CityPage extends Component {
             <HashLink to='#score-data'>City Scores</HashLink>
             <HashLink to='#cost-of-living'>Cost of Living</HashLink>
             <HashLink to='#housing'>Housing Costs</HashLink>
-            <HashLink to='#unemployment'>Unemployment</HashLink>
-            <HashLink to='#economy'>Economy</HashLink>
+            <HashLink to='#unemployment'>Economy</HashLink>
           </nav>
 
           <section className='all-data'>

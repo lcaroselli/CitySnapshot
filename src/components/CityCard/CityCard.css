@@ -1,5 +1,9 @@
 .charts {
-  width: 70%;
+  width: 60%;
+}
+
+.city-details {
+  padding: 8px;
 }
 
 .city-image {
@@ -23,21 +27,28 @@
   text-align: center;
 }
 
-.city-scores-all, .cost-of-living, .economy, .housing, .score-section, .unemployment {
+.city-scores-all, .cost-of-living, .housing, .score-section, .unemployment {
   border-left: 2px solid #007EA7;
-  margin-bottom: 80px;
-  margin-left: 30px;
+  margin: 0px 80px 80px 30px;
   padding-bottom: 20px;
 }
 
-.cost-of-living-label, .economy p, .housing-label, .unemployment p {
+.cost-of-living h6, .housing h6, .unemployment h6 {
+  color: #007EA7;
+  font-size: 16px;
+  margin: 20px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.cost-of-living-label, .housing-label, .unemployment p {
   color: #252629;
   font-size: 18px;
   margin: 10px 20px;
   text-align: left;
 }
 
-.cost-of-living img, .economy img, .housing img, .unemployment img {
+.cost-of-living img, .housing img, .unemployment img {
   height: 30px;
   margin-left: 5px;
   vertical-align: middle;
@@ -80,4 +91,10 @@ h3 p {
   padding: 40px;
   margin: auto;
   width: 80%;
+}
+
+.summary-p {
+  color: #007EA7;
+  font-size: 16px;
+  margin-top: 15px;
 }
