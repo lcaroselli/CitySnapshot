@@ -1,6 +1,7 @@
 .all-data {
   display: flex;
   flex-direction: column;
+  flex: 7;
 }
 
 .city-page {
@@ -20,6 +21,7 @@
 .city-page-nav {
   background: white;
   display: flex;
+  flex: 1;
   flex-direction: column;
   height: 455px;
   margin: 0px 20px;
@@ -52,7 +54,7 @@
   color: #252629;
   font-size: 15px;
   margin: 30px 0;
-  padding: 0 40px 15px 25px;
+  padding: 0 40px 20px 25px;
   text-decoration: none;
 }
 
