@@ -11,7 +11,7 @@ import worldIcon from '../../assets/grid-world.svg';
 export class CityCard extends Component {
 
   cityImageData() {
-    return this.props.cityImageData.map(city => ( <img className='city-image' src={ city.image.web }/> ))
+    return this.props.cityImageData.map(city => ( <img className='city-image' src={ city.image.web }/>))
   }
 
   citySummaryData() {
