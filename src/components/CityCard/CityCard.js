@@ -10,17 +10,17 @@ import worldIcon from '../../assets/grid-world.svg';
 
 export class CityCard extends Component {
 
-  cityImageData = () => {
+  cityImageData() {
     return this.props.cityImageData.map(city => ( <img className='city-image' src={ city.image.web }/> ))
   }
 
-  citySummaryData = () => {
+  citySummaryData() {
     return (
       <p>{ this.props.summaryData }</p>
     )
   }
 
-  mappedCityScoreData = () => {
+  mappedCityScoreData() {
     return handleCityScoreDisplay(this.props.cityScoreData).map(city => (
       <section>
         <p className='city-score'>{ city.name }: <span>{ Math.round(city.score) }</span></p>
@@ -28,7 +28,7 @@ export class CityCard extends Component {
     ))
   }
 
-  mappedCityDetailData = () => {
+  mappedCityDetailData() {
     const filteredData = handleCityDetailDisplay(this.props.cityDetailData).filter((el, i) => i === 0)
 
     return filteredData.map(city => (

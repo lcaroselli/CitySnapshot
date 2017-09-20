@@ -64,7 +64,7 @@ export class ComparePage extends Component {
     e.preventDefault();
   }
 
-  mappedCityScoreData = (cityData) => {
+  mappedCityScoreData(cityData) {
     return handleCityScoreDisplay(cityData).map(city => (
       <section>
         <p className='scored'>{ city.name }: <span>{ Math.round(city.score) }</span></p>
@@ -72,7 +72,7 @@ export class ComparePage extends Component {
     ))
   }
 
-  cityImageData = (imageData) => {
+  cityImageData(imageData) {
     return imageData.map(city => ( <img className='city-image' src={ city.image.web }/> ))
   }
 
