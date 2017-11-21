@@ -1,5 +1,5 @@
 header {
-  color: #F5F5EE;
+  color: #0B0014;
   font-size: 40px;
   font-weight: 300;
   text-align: left;
@@ -19,15 +19,15 @@ header {
 }
 
 .main-nav a {
-  border-left: 3px solid #393A41;
-  color: #F5F5EE;
-  font-size: 20px;
+  border-left: 3px solid #f04242;
+  color: #0B0014;
+  font-size: 25px;
   padding: 0 40px 0 25px;
   text-decoration: none;
 }
 
 .main-nav a:hover {
   transition: all .3s ease-in;
-  border-left: 3px solid #ACAB9E;
-  color: #C06E68;
+  border-left: 3px solid #0B0014;
+  color: #f04242;
 }

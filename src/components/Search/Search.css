@@ -3,7 +3,7 @@
   border: 1px solid black;
   margin: 0 auto;
   height: auto;
-  max-height: 135px;
+  max-height: 90px;
   overflow: scroll;
   padding: 10px;
   width: 50%;
@@ -12,7 +12,7 @@
 .filtered-cities button {
   border: none;
   background: none;
-  font-size: 18px;
+  font-size: 25px;
   margin-bottom: 8px;
   text-align: left;
   width: 100%;
@@ -34,29 +34,34 @@ h4 {
 
 input {
   border: 1px solid #252629;
-  font-size: 20px;
-  height: 30px;
+  font-size: 25px;
+  height: 50px;
   margin-top: 30px;
   width: 50%;
   -webkit-appearance: none;
 }
 
 .home {
-  background: #E7E1C5;
-  border-top: 3px solid #3C6E71;
-  border-bottom: 3px solid #3C6E71;
+  background: #EFEFEF;
+  border-top: 7px solid #FF7C7A;
+  border-bottom: 7px solid #FF7C7A;
   padding: 20px;
   height: 30vh;
   width: 100%;
 }
 
 .search-text {
-  font-size: 18px;
+  color: #0B0014;
+  background: rgba(194,235,239,0.76);
+  margin: 20px;
+  padding: 20px;
+  font-size: 30px;
+  text-shadow: 1px 1px lightgrey;
 }
 
 .map-section {
-  background: #C06E68;
-  margin: 10px auto;
+  background: rgba(194,235,239,0.76);
+  margin: 60px auto;
   width: 100%;
 }
 
@@ -86,7 +91,8 @@ input {
 }
 
 .best-place-text {
-  color: white;
+  color: #0B0014;
+  font-style: italic;
+  font-size: 40px;
   padding: 30px;
-  font-size: 20px;
 }

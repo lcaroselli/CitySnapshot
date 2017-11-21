@@ -58,6 +58,8 @@
 }
 
 .form-div {
+  border-bottom: 5px solid #f04242;
+  border-top: 5px solid #f04242;
   height: 130px;
 }
 

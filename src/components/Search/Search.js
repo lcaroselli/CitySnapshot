@@ -39,7 +39,7 @@ export class Search extends Component {
     })
   }
 
-  filterCities(cityName) {
+  filterCities(cityName, e) {
     const filterSearchedCities = this.state.cities.filter(city => {
       return city.toLowerCase().startsWith(cityName.toLowerCase());
     })
@@ -63,7 +63,7 @@ export class Search extends Component {
         <div className='search-wrapper home'>
           <p className='search-text'>A cost-of-living comparison tool & more</p>
           <form onSubmit={ this.handleEnter }>
-            <input placeholder='Search for a City' type='search' value={ this.state.input } onChange={ e => this.handleChange(e) } />
+            <input placeholder='Search for a City' type='search' value={ this.state.input } onChange={ e => this.handleChange(e) } onKeyDown={ this.handleDownArrow } />
             <div className={ cityDisplay }> { this.state.filteredCities.map(city => {
               return (
                 <p><button onClick={ e => this.handleCityClick(e) }>{ city }</button></p>

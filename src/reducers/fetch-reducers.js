@@ -64,8 +64,6 @@ export const fetchScoreSuccess = (state = [], action) => {
   }
 }
 
-// [...state, Object.assign({})]
-
 export const fetchScoreSuccess2 = (state = [], action) => {
   switch(action.type) {
     case 'FETCH_SCORE_SUCCESSFUL_2':
