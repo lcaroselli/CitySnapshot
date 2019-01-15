@@ -8,7 +8,9 @@ import configureStore from './ConfigureStore';
 import createHistory from '../node_modules/history/createBrowserHistory';
 import registerServiceWorker from './registerServiceWorker';
 
-const history = createHistory();
+const history = createHistory({
+  basename: process.env.PUBLIC_URL,
+});
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
